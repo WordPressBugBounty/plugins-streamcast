@@ -2,7 +2,7 @@
 Contributors: bplugins, freemius, shehabulislam
 Tags: live stream, icecast, shoutcast, radio player, Audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
-Requires at least: 4.0
+Requires at least: 4.2
 Tested up to: 6.6.2
 Stable tag: 2.2.4
 Requires PHP: 7.1
