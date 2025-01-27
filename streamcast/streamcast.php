@@ -4,7 +4,7 @@
  * Plugin Name: StreamCast
  * Plugin URI:  https://wordpress.org/plugins/streamcasthttps://wordpress.org/
  * Description: Play iceCast, Shoutcast, Radioco, Radionomy Live stream in Wordpress.
- * Version: 2.2.4
+ * Version: 2.2.5
  * Author: bPlugins
  * Author URI: http://bPlugins.com
  * License: GPLv2
@@ -57,7 +57,7 @@ if ( function_exists( 'str_fs' ) ) {
         /*Some Set-up*/
         define( 'STP_PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
         define( 'STP_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-        define( 'STP_PLUGIN_VERSION', '2.2.4' );
+        define( 'STP_PLUGIN_VERSION', '2.2.5' );
         // load custom mimes
         require_once 'mimes/enable-mime-type.php';
         function stp_load_textdomain() {
