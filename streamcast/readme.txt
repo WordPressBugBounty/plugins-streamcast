@@ -1,10 +1,10 @@
 === StreamCast - Radio Player for WordPress  ===
-Contributors: bplugins, freemius, shehabulislam
+Contributors: bplugins, freemius, shehabulislam, taninrahman
 Tags: live stream, icecast, shoutcast, radio player, Audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
-Requires at least: 4.3
-Tested up to: 6.7.1
-Stable tag: 2.2.5
+Requires at least: 4.0
+Tested up to: 6.8
+Stable tag: 2.3.0
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Play iceCast, Shoutcast, Radionomy, Radiojar, RadioCo Live stream in Wordpress.
 A simple, accessible, user-friendly and fully customizable radio player for WordPress. You can  play iceCast, Shoutcast, Radionomy, Radiojar, RadioCo Live stream in WordPress website using shortcode.
 
 **[See Live Demo](https://bplugins.com/products/streamcast-radio-player/#demos "Demo")** 
-**[Buy The Pro](https://bplugins.com/products/streamcast-radio-player/#pricing "Buy Pro version")**
+**[Buy The Pro](https://bplugins.com/products/streamcast-radio-player/#pricing "Buy Pro version")** 
 
 = How to use it? = 
 
@@ -80,8 +80,8 @@ You cannot embed more than one player in a single page.
 
 == Changelog ==
 
-= 2.2.5 - 27 Jan, 2025 =
-* Update: Update Freemius WordPress SDK
+= 2.3.0 - 19 Feb 2025 =
+* Added gutenberg block and re-customize whole plugin.
 
 = 2.2.4 - 30 July 2024 =
 * Fixed: Cross Site Scripting

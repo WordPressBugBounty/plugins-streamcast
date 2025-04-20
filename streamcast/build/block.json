@@ -1,0 +1,128 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "scb/streamcast-block",
+  "version": "1.0.0",
+  "title": "StreamCast Block",
+  "category": "widgets",
+  "description": "Play iceCast, Shoutcast, Radionomy, Radiojar, RadioCo and Audio Live stream in Wordpress.",
+  "keywords": [
+    "audio player",
+    "radio player",
+    "streamcast",
+    "live player",
+    "live stream player"
+  ],
+  "textdomain": "b-blocks",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "radioPlayer": {
+      "type": "object",
+      "default": {
+        "playerType": "minimal",
+        "streamURL": "https://media-ssl.musicradio.com/HeartLondon",
+        "streamProvider": "shout-cast",
+        "streamPort": 8000,
+        "streamMountPoint": "",
+        "fetchNameFromUrl": false,
+        "stationName": "Station Name",
+        "welcomeMessage": "Welcome Message",
+        "artWork": "",
+        "autoPlay": false,
+        "showTime": true,
+        "playerPosition": "center",
+        "skin": {
+          "name": "mcclean",
+          "width": 180,
+          "height": 60
+        },
+        "initialVolume": 65
+      }
+    },
+    "radioStyles": {
+      "type": "object",
+      "default": {
+        "playerWidth": "100%",
+        "ultimate": {
+          "playerColors": "theme",
+          "playerTheme": "dodgerBlue",
+          "playerOverlayColor": "rgba(15,17,21,0.5)",
+          "thumbnailBorderColor": "rgba(255, 255, 255, 0.2)",
+          "contentColor": "#fff",
+          "buttonHoverColor": "orangered",
+          "progressActiveColor": "orangered",
+          "visualizerColor": "orangered",
+          "playerBackgroundImg": "",
+          "posterImg": {
+            "url": "https://templates.bplugins.com/wp-content/uploads/2025/02/streamcast-demo-ultimate-1.png"
+          }
+        },
+        "echoStream": {
+          "bgImg": {
+            "url": "https://danialsabagh.com/singleaudioplayer/img/radio.jpg"
+          },
+          "blur": 7
+        },
+        "backgroundColor": "#f09f8b",
+        "stationName": {
+          "color": "#fff",
+          "hoverColor": "",
+          "typo": {
+            "fontSize": {
+              "desktop": 18
+            }
+          },
+          "bgColor": "#50241b",
+          "hoverBgColor": ""
+        },
+        "artistFmName": {
+          "color": "#fff",
+          "typo": {
+            "fontSize": {
+              "desktop": 15
+            }
+          }
+        },
+        "contentColor": "#fff",
+        "playBtnColor": "red",
+        "timeStamp": {
+          "color": "#fff",
+          "hoverColor": "",
+          "typo": {
+            "fontSize": {
+              "desktop": 18
+            }
+          },
+          "bgColor": "#50241b",
+          "hoverBgColor": ""
+        }
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "interactivity": true
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": [
+    "file:./index.js",
+    "wp-api"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": [
+    "file:./view.js",
+    "react",
+    "react-dom"
+  ]
+}
