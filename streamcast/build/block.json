@@ -73,7 +73,8 @@
           "typo": {
             "fontSize": {
               "desktop": 18
-            }
+            },
+            "fontFamily": "Default"
           },
           "bgColor": "#50241b",
           "hoverBgColor": ""
@@ -83,7 +84,8 @@
           "typo": {
             "fontSize": {
               "desktop": 15
-            }
+            },
+            "fontFamily": "Default"
           }
         },
         "contentColor": "#fff",
@@ -94,7 +96,8 @@
           "typo": {
             "fontSize": {
               "desktop": 18
-            }
+            },
+            "fontFamily": "Default"
           },
           "bgColor": "#50241b",
           "hoverBgColor": ""
