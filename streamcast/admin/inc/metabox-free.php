@@ -44,121 +44,122 @@ if (class_exists('CSF')) {
 <?php
     });
 
-    //
     // Set a unique slug-like ID
     $prefix = 'sc_';
 
     // Create a metabox
     CSF::createMetabox($prefix, array(
-        'title'     => 'Radio Player Configuration',
+        'title'     => __('Radio Player Configuration', 'streamcast'),
         'post_type' => 'streamcast',
         'data_type' => 'unserialize',
         'context'   => 'normal', // The context within the screen where the boxes should display. `normal`, `side`, `advanced`
     ));
 
     //
-    // Create a section
     CSF::createSection($prefix, array(
-        'title'  => 'Required fields are marked with an * (asterisk)',
+        'title'  => __('Required fields are marked with an * (asterisk)', 'streamcast'),
         'fields' => array(
             array(
                 'id'      => 'opt-radio',
                 'type'    => 'radio',
-                'title'   => 'Radio Player Type *',
-                'desc'    =>  'You must choose radio player type first to get related settings fields.', 
+                'title'   => __('Radio Player Type*', 'streamcast'),
+                'desc'    =>  __('You must choose radio player type first to get related settings fields.', 'streamcast'), 
                 'options' => array(
-                    'minimal'     => 'Minimal',
-                    'standard' => 'Standard',
-                    'advanced' => 'Advanced',
-                    'ultimate' => 'Ultimate',
-                    'echoStream' => 'EchoStream',
-                    'auroraPlay' => 'AuroraPlay',
-                    "wooden" => "Wooden"
+                    'minimal'  => __('Minimal', 'streamcast'),
+                    'standard' => __('Standard', 'streamcast'),
+                    'advanced' => __('Advanced', 'streamcast'),
+                    'ultimate' => __('Ultimate', 'streamcast'),
+                    'echoStream' => __('EchoStream', 'streamcast'),
+                    'auroraPlay' => __('AuroraPlay', 'streamcast'),
+                    "wooden" => __("Wooden", 'streamcast')
                 ),
                 'default' => 'minimal',
                 'inline'  => true,
             ),
 
-
             array(
                 'id'            => 'stream_url',
                 'type'          => 'text',
                 'dependency'   => array('opt-radio|opt-radio|opt-radio|opt-radio', '!=|!=|!=|!=', 'ultimate|echoStream|auroraPlay|wooden'),
-                'title'         =>  'Stream URL*', 
-                'button_title'  => 'Add or Upload File', 
-                'remove_title'  => 'Remove Mp3', 
+                'title'         => __('Stream URL*', 'streamcast'), 
+                'button_title'  => __('Add or Upload File', 'streamcast'), 
+                'remove_title'  => __('Remove Mp3', 'streamcast'), 
                 'default'      => 'https://media-ssl.musicradio.com/HeartLondon'
             ),
+            
             array(
                 'id'           => 'stream_url_echoXaurora',
                 'type'         => 'text',
                 'dependency'   => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
-                'title'        => 'Stream URL', 'streamcast',
+                'title'        => __('Stream URL', 'streamcast'), 'streamcast',
                 'desc'         => 'Enter a stream url. <br/><i>Important</i><li>If your site is secured ( https://) then the stream url must be secure (https://)</li> ',
-                'button_title' => 'Select a .pls file', 
-                'remove_title' => 'Remove pls', 
+                'button_title' => __('Select a .pls file', 'streamcast'), 
+                'remove_title' => __('Remove pls', 'streamcast'), 
                 'default'      => "https://media-ssl.musicradio.com/HeartLondon"
             ),
-
 
             array(
                 'id'    => 'station_name',
                 'type'  => 'text',
                 'dependency' => array('opt-radio|opt-radio|opt-radio|opt-radio', '!=|!=|!=|!=', 'ultimate|echoStream|auroraPlay|wooden'),
                 'default' => 'Station Name',
-                'title' => 'Station Name*',
+                'title' => __('Station Name*','streamcast'),
             ),
 
             array(
                 'id'         => 'station_name_echoXauroraXwooden',
                 'type'       => 'text',
                 'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
-                'title'      => 'Station Name*', 
+                'title'      => __('Station Name*','streamcast'), 
                 'default'    => 'Hello London',
             ),
+
             array(
                 'id'    => 'fetch_name_from_url',
                 'type'  => 'switcher',
                 'class' => 'bplugins-meta-readonly',
-                'desc'       => "If station name can't access from URL then will use the given station name",
+                'desc'       => __("If station name can't access from URL then will use the given station name",'streamcast'),
                 'dependency' => array('opt-radio|opt-radio', '!=|!=', 'minimal|ultimate'),
-                'title' => 'Fetch Name From URL', 
+                'title' => __('Fetch Name From URL', 'streamcast'), 
                 'default' => false
             ),
+
             array(
                 'id'    => 'welcome_msgs',
                 'type'  => 'text',
                 'dependency' => array('opt-radio|opt-radio|opt-radio|opt-radio', '!=|!=|!=|!=', 'ultimate|echoStream|auroraPlay|wooden'),
                 'default' => "Welcome Message",
-                'title' => 'Welcome Message*', 
+                'title' => __('Welcome Message*','streamcast'), 
             ),
 
             array(
                 'id'         => 'welcomeMsg_echoXaurora',
                 'type'       => 'text',
                 'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay'),
-                'title'      => 'Artist/Fm Name*', 
+                'title'      => __('Artist/Fm Name*', 'streamcast'), 
                 'default'    => '106.2',
             ),
+
             array(
                 'id'         => 'widthXaurora',
                 'type'       => 'text',
                 'dependency' => array('opt-radio', 'any', 'auroraPlay,wooden'),
-                'title'      => 'Player Width', 
+                'title'      => __('Player Width', 'streamcast'), 
                 'default'    => '100%',
             ),
+
             array(
                 'id'         => 'widthXecho',
                 'type'       => 'text',
                 'dependency' => array('opt-radio', '==', 'echoStream'),
-                'title'      => 'Player Width', 
+                'title'      => __('Player Width', 'streamcast'), 
                 'default'    => '450px',
             ),
 
             array(
                 'id'       => 'player_skin',
                 'type'     => 'select',
-                'title'    => 'Skin',
+                'title'    => __('Skin', 'streamcast'),
                 'default'  => 'mcclean',
                 'dependency' => array('opt-radio', '==', 'standard'),
                 'class' => 'bplugins-meta-readonly',
@@ -256,18 +257,16 @@ if (class_exists('CSF')) {
                 'id'      => 'autoplay',
                 'type'    => 'switcher',
                 'dependency' => array('opt-radio', '==', 'standard'),
-                'title'   => 'Auto Play', 
+                'title'   => __('Auto Play', 'streamcast'), 
                 'class' => 'bplugins-meta-readonly',
                 'default' => false // or false
             ),
-
-
 
             array(
                 'id'       => 'volume',
                 'type'     => 'spinner',
                 'dependency' => array('opt-radio', '==', 'standard'),
-                'title'    => 'Initial Volume', 
+                'title'    => __('Initial Volume', 'streamcast'), 
                 'class' => 'bplugins-meta-readonly',
                 'default'  => '65',
                 'min'      => '0',
@@ -280,7 +279,7 @@ if (class_exists('CSF')) {
                 'library'    => 'image',
                 'type'       => 'media',
                 'dependency'   => array('opt-radio', '==', 'advanced'),
-                'title'         => 'ArtWork', 
+                'title'         => __('ArtWork', 'streamcast'), 
                 'default'    => array(
                     'url'         => 'https://templates.bplugins.com/wp-content/uploads/2025/02/streamcast-demo-ultimate-1.png',
                     'id'          => '',
@@ -292,22 +291,23 @@ if (class_exists('CSF')) {
                     "description" => "",
                 ),
                 'class' => "bplugins-meta-readonly",
-                'desc'  => '94x94 px photo is the standard artwork size, accepted file type .png, .jpeg, .jpg ', 
+                'desc'  => __('94x94 px photo is the standard artwork size, accepted file type .png, .jpeg, .jpg ', 'streamcast'), 
             ),
             
             array(
                 'id'      => 'autoplay',
                 'type'    => 'switcher',
                 'dependency' => array('opt-radio', '==', 'advanced'),
-                'title'   => 'Auto Play', 
+                'title'   => __('Auto Play', 'streamcast'), 
                 'class' => 'bplugins-meta-readonly',
                 'default' => false // or false
             ),
+
             array(
                 'id'       => 'volume',
                 'type'     => 'spinner',
                 'dependency' => array('opt-radio', '==', 'advanced'),
-                'title'    => 'Initial Volume', 
+                'title'    => __('Initial Volume', 'streamcast'), 
                 'class' => 'bplugins-meta-readonly',
                 'default'  => '65',
                 'min'      => '0',
@@ -319,7 +319,7 @@ if (class_exists('CSF')) {
                 'type'    => 'switcher',
                 'class' => 'bplugins-meta-readonly',
                 'dependency' => array('opt-radio', '==', 'advanced'),
-                'title'   => 'Show Time', 
+                'title'   => __('Show Time', 'streamcast'), 
                 'default' => true // or false
             ),
             array(
@@ -327,21 +327,19 @@ if (class_exists('CSF')) {
                 'type'    => 'color',
                 'class' => 'bplugins-meta-readonly',
                 'dependency' => array('opt-radio', '==', 'advanced'),
-                'title'   => 'Background color', 
+                'title'   => __('Background color', 'streamcast'), 
                 'default' => '#f09f8b' // or false
             ),
 
             // Ultimate
-
-
             array(
                 'id'         => 'streamProvider',
                 'type'       => 'button_set',
-                'title'      => 'Stream Provider*',
+                'title'      => __('Stream Provider*', 'streamcast'),
                 'options'    => array(
-                    'shout-cast' => 'SHOUT cast',
-                    'ice-cast'   => 'Ice cast',
-                    'other' => 'Other'
+                    'shout-cast' => __('SHOUT cast', 'streamcast'),
+                    'ice-cast'   => __('Ice cast', 'streamcast'),
+                    'other' => __('Other', 'streamcast')
                 ),
                 'default'    => 'shout-cast',
                 'dependency' => array('opt-radio', '==', 'ultimate'),
@@ -350,7 +348,7 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'streamURL',
                 'type'       => 'text',
-                'title'      => 'Stream URL *',
+                'title'      => __('Stream URL *', 'streamcast'),
                 'default'    => 'http://s5-webradio.antenne.de/antenne?icy=https',
                 'dependency' => array('opt-radio', '==', 'ultimate'),
             ),
@@ -358,7 +356,7 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'streamPort',
                 'type'       => 'number',
-                'title'      => 'Stream Port *',
+                'title'      => __('Stream Port *', 'streamcast'),
                 'default'    => '8009',
                 'dependency' => array('opt-radio|streamProvider', '==|!=', 'ultimate|other'),
             ),
@@ -366,17 +364,15 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'streamMountPoint',
                 'type'       => 'text',
-                'title'      => 'Stream Mount Point *',
+                'title'      => __('Stream Mount Point *', 'streamcast'),
                 'dependency' => array('streamProvider|opt-radio', '==|==', 'ice-cast|ultimate'),
                 'default'    => '/stream',
             ),
 
-
-
             array(
                 'id'         => 'radioName',
                 'type'       => 'text',
-                'title'      => 'Station Name',
+                'title'      => __('Station Name', 'streamcast'),
                 'default'    => 'Station Name',
                 'dependency' => array('opt-radio', '==', 'ultimate'),
             ),
@@ -385,9 +381,9 @@ if (class_exists('CSF')) {
                 'id'    => 'fetch_name_from_url',
                 'type'  => 'switcher',
                 'class' => 'bplugins-meta-readonly',
-                'desc'       => "If station name can't access from URL then will use the given station name",
+                'desc'       => __("If station name can't access from URL then will use the given station name", 'streamcast'),
                 'dependency' => array('opt-radio', '==', 'ultimate'),
-                'title' => 'Fetch Name From URL', 
+                'title' => __('Fetch Name From URL', 'streamcast'), 
                 'default' => false
             ),
 
@@ -395,16 +391,17 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'playerWidth',
                 'type'       => 'text',
-                'title'      => 'Player Width',
+                'title'      => __('Player Width', 'streamcast'),
                 'default'    => '100%',
                 'dependency' => array('opt-radio', '==', 'ultimate'),
             ),
+
             array(
                 'id'         => 'radioImage',
                 'library'       => 'image',
                 'type'       => 'media',
                 'class' => 'bplugins-meta-readonly',
-                'title'      => 'Poster Image',
+                'title'      => __('Poster Image', 'streamcast'),
                 'default'    => array(
                     'url'         => 'https://templates.bplugins.com/wp-content/uploads/2025/02/streamcast-demo-ultimate-1.png',
                     'id'          => '',
@@ -423,20 +420,20 @@ if (class_exists('CSF')) {
                 'library'       => 'image',
                 'type'       => 'media',
                 'class' => 'bplugins-meta-readonly',
-                'title'      => 'Player Background Image',
+                'title'      => __('Player Background Image', 'streamcast'),
                 'dependency' => array('opt-radio', '==', 'ultimate'),
             ),
 
             array(
                 'id'         => 'player_postiion',
                 'type'       => 'radio',
-                'title'      => 'Player Position',
+                'title'      => __('Player Position', 'streamcast'),
                 'class' => 'bplugins-meta-readonly',
                 //   'dependency' => array( 'opt-radio|opt-radio', '!=|!=', 'standard|ultimate' ),
                 'options'    => array(
-                    'left'     => 'Left',
-                    'center'   => 'Center',
-                    'right'    => 'Right',
+                    'left'     => __('Left', 'streamcast'),
+                    'center'   => __('Center', 'streamcast'),
+                    'right'    => __('Right', 'streamcast'),
 
                 ),
                 'default'    => 'center',
@@ -446,10 +443,10 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'playerColors',
                 'type'       => 'button_set',
-                'title'      => 'Player Colors',
+                'title'      => __('Player Colors', 'streamcast'),
                 'options'    => array(
-                    'theme'  => 'Theme',
-                    'custom' => 'Custom Color',
+                    'theme'  => __('Theme', 'streamcast'),
+                    'custom' => __('Custom Color', 'streamcast'),
                 ),
                 'default'    => 'theme',
                 'class' => 'bplugins-meta-readonly',
@@ -460,11 +457,11 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'playerThemes',
                 'type'       => 'button_set',
-                'title'      => 'Player Themes',
+                'title'      => __('Player Themes', 'streamcast'),
                 'options'    => array(
-                    'dodgerBlue'    => 'Dodger Blue',
-                    'bittersweet'   => 'Bittersweet',
-                    'lightSeaGreen' => 'Light Sea Green',
+                    'dodgerBlue'    => __('Dodger Blue', 'streamcast'),
+                    'bittersweet'   => __('Bittersweet', 'streamcast'),
+                    'lightSeaGreen' => __('Light Sea Green', 'streamcast'),
                 ),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'theme|ultimate'),
                 'default'    => 'dodgerBlue',
@@ -475,222 +472,233 @@ if (class_exists('CSF')) {
             array(
                 'id'         => 'playerOverlayColor',
                 'type'       => 'color',
-                'title'      => 'Player Overlay Color',
+                'title'      => __('Player Overlay Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'class' => 'bplugins-meta-readonly',
                 'default'    => 'rgba(15, 17, 21, 0.5)',
             ),
+
             array(
                 'id'         => 'imgBorderColor',
                 'type'       => 'color',
-                'title'      => 'Thumbnail Border Color',
+                'title'      => __('Thumbnail Border Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'class' => 'bplugins-meta-readonly',
                 'default'    => 'rgba(255, 255, 255, 0.2)',
             ),
+
             array(
                 'id'         => 'contentColor',
                 'type'       => 'color',
-                'title'      => 'Content Color',
+                'title'      => __('Content Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'class' => 'bplugins-meta-readonly',
                 'default'    => '#fff',
             ),
+
             array(
                 'id'         => 'btnHoverColor',
                 'type'       => 'color',
-                'title'      => 'Button Hover Color',
+                'title'      => __('Button Hover Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'class' => 'bplugins-meta-readonly',
                 'default'    => 'orangered',
             ),
+
             array(
                 'id'         => 'progressColor',
                 'type'       => 'color',
-                'title'      => 'Progress Active Color',
+                'title'      => __('Progress Active Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'class' => 'bplugins-meta-readonly',
                 'default'    => 'orangered',
             ),
+
             array(
                 'id'         => 'visualizerColor',
                 'type'       => 'color',
-                'title'      => 'Visualizer Color',
+                'title'      => __('Visualizer Color', 'streamcast'),
                 'dependency' => array('playerColors|opt-radio', '==|==', 'custom|ultimate'),
                 'default'    => 'orangered',
                 'class' => 'bplugins-meta-readonly',
             ),
 
-
-
-        // EchoStream 
-        array(
-            'id'         => 'echo_bg_image',
-            'library'       => 'image',
-            'type'       => 'media',
-            'class'      => 'bplugins-meta-readonly',
-            'title'      => 'Upload Background Image',
-            'default'    => array(
-                'url'         => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
-                'id'          => '',
-                "width" => 612,
-                "height" => 408,
-                "thumbnail" => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
-                "alt" => "",
-                "title" => "radio-player-image",
-                "description" => "",
+            // EchoStream 
+            array(
+                'id'         => 'echo_bg_image',
+                'library'       => 'image',
+                'type'       => 'media',
+                'class'      => __('bplugins-meta-readonly', 'streamcast'),
+                'title'      => __('Upload Background Image', 'streamcast'),
+                'default'    => array(
+                    'url'         => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
+                    'id'          => '',
+                    "width" => 612,
+                    "height" => 408,
+                    "thumbnail" => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
+                    "alt" => "",
+                    "title" => "radio-player-image",
+                    "description" => "",
+                ),
+                'dependency' => array('opt-radio', '==', 'echoStream'),
             ),
-            'dependency' => array('opt-radio', '==', 'echoStream'),
-        ),
-        array(
-            'id'         => 'blur_effect',
-            'type'       => 'spinner',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'echoStream'),
-            'title'      => 'Blur Effect', 
-            'default'    => 7,
-            'min'        => 0,
-            'max'        => 100,
-            'unit'       => 'px',
-        ),
-        array(
-            'id'         => 'bgXaurora',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'auroraPlay'),
-            'title'      => 'Background Color', 
-            'default'    => '#000000', 
-        ),
-        array(
-            'id'         => 'bgXwooden',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Background Color', 
-            'default'    => '#693328', 
-        ),
 
-        array(
-            'id'         => 'contentColorEchoXauroraXwooden',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
-            'title'      => 'Content Color', 
-            'default'    => '#ffffff', // or false
-        ),
-
-        array(
-            'id'         => 'station_name_colorEchoXAuroraXwooden',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
-            'title'      => 'Station Name Color', 
-            'default'    => 'white', 
-        ),
-        array(
-            'id'         => 'welcome_msg_colorEchoXAurora',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay'),
-            'title'      => 'Artist/FM Name Color', 
-            'default'    => 'white', 
-        ),
-        array(
-            'id'         => 'play_btn_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'echoStream'),
-            'title'      => 'Play Button Color', 
-            'default'    => 'red', // or false
-        ),
-
-        // AuroraPlay
-        array(
-            'id'         => 'aurora_art_image',
-            'library'    => 'image',
-            'type'       => 'media',
-            'class'      => 'bplugins-meta-readonly',
-            'title'      => 'Upload Art Work Image',
-            'default'    => array(
-                'url'         => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
-                'id'          => '',
-                "width" => 612,
-                "height" => 408,
-                "thumbnail" => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
-                "alt" => "",
-                "title" => "radio-player-image",
-                "description" => "",
+            array(
+                'id'         => 'blur_effect',
+                'type'       => 'spinner',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'echoStream'),
+                'title'      => __('Blur Effect', 'streamcast'), 
+                'default'    => 7,
+                'min'        => 0,
+                'max'        => 100,
+                'unit'       => 'px',
             ),
-            'dependency' => array('opt-radio', '==', 'auroraPlay'),
-        ),
 
-        
-        // Wooden
-        array(
-            'id'         => 'station_name_hover_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Station Name Hover Color', 
-            'default'    => ''
-        ),
-        array(
-            'id'         => 'station_name_bg_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Station Name Background Color', 
-            'default'    => '#50241b' 
-        ),
-        array(
-            'id'         => 'station_name_bg_hover_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Station Name Hover Background Color', 
-            'default'    => '' 
-        ),
+            array(
+                'id'         => 'bgXaurora',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'auroraPlay'),
+                'title'      => __('Background Color', 'streamcast'), 
+                'default'    => '#000000', 
+            ),
 
-        // TimeStamp
-        array(
-            'id'         => 'timeStamp_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Timestamp Color', 
-            'default'    => '#fff' 
-        ),
-        array(
-            'id'         => 'timeStamp_hover_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Timestamp Hover Color', 
-            'default'    => '' 
-        ),
-        array(
-            'id'         => 'timeStamp_bg_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Timestamp Background Color', 
-            'default'    => '#50241b' 
-        ),
-        array(
-            'id'         => 'timeStamp_bg_hover_color',
-            'type'       => 'color',
-            'class'      => 'bplugins-meta-readonly',
-            'dependency' => array('opt-radio', '==', 'wooden'),
-            'title'      => 'Timestamp Hover Background Color', 
-            'default'    => '' 
-        ),
+            array(
+                'id'         => 'bgXwooden',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Background Color', 'streamcast'), 
+                'default'    => '#693328', 
+            ),
 
+            array(
+                'id'         => 'contentColorEchoXauroraXwooden',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
+                'title'      => __('Content Color', 'streamcast'), 
+                'default'    => '#ffffff',
+            ),
+
+            array(
+                'id'         => 'station_name_colorEchoXAuroraXwooden',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
+                'title'      => __('Station Name Color', 'streamcast'), 
+                'default'    => 'white', 
+            ),
+
+            array(
+                'id'         => 'welcome_msg_colorEchoXAurora',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay'),
+                'title'      => __('Artist/FM Name Color', 'streamcast'), 
+                'default'    => 'white', 
+            ),
+
+            array(
+                'id'         => 'play_btn_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'echoStream'),
+                'title'      => __('Play Button Color', 'streamcast'), 
+                'default'    => 'red',
+            ),
+
+            // AuroraPlay
+            array(
+                'id'         => 'aurora_art_image',
+                'library'    => 'image',
+                'type'       => 'media',
+                'class'      => 'bplugins-meta-readonly',
+                'title'      => __('Upload Art Work Image', 'streamcast'),
+                'default'    => array(
+                    'url'         => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
+                    'id'          => '',
+                    "width" => 612,
+                    "height" => 408,
+                    "thumbnail" => 'https://danialsabagh.com/singleaudioplayer/img/radio.jpg',
+                    "alt" => "",
+                    "title" => "radio-player-image",
+                    "description" => "",
+                ),
+                'dependency' => array('opt-radio', '==', 'auroraPlay'),
+            ),
+            
+            // Wooden
+            array(
+                'id'         => 'station_name_hover_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Station Name Hover Color', 'streamcast'), 
+                'default'    => ''
+            ),
+
+            array(
+                'id'         => 'station_name_bg_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Station Name Background Color', 'streamcast'), 
+                'default'    => '#50241b' 
+            ),
+
+            array(
+                'id'         => 'station_name_bg_hover_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Station Name Hover Background Color', 'streamcast'), 
+                'default'    => '' 
+            ),
+
+            // TimeStamp
+            array(
+                'id'         => 'timeStamp_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Timestamp Color', 'streamcast'), 
+                'default'    => '#fff' 
+            ),
+
+            array(
+                'id'         => 'timeStamp_hover_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Timestamp Hover Color', 'streamcast'), 
+                'default'    => '' 
+            ),
+
+            array(
+                'id'         => 'timeStamp_bg_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Timestamp Background Color', 'streamcast'), 
+                'default'    => '#50241b' 
+            ),
+
+            array(
+                'id'         => 'timeStamp_bg_hover_color',
+                'type'       => 'color',
+                'class'      => 'bplugins-meta-readonly',
+                'dependency' => array('opt-radio', '==', 'wooden'),
+                'title'      => __('Timestamp Hover Background Color', 'streamcast'), 
+                'default'    => '' 
+            ),
 
             array(
                 'id'       => 'custom_css',
                 'type'     => 'code_editor',
-                'title'    => 'Custom CSS',
-                'desc'     => 'This field is optional. ',
+                'title'    => __('Custom CSS', 'streamcast'),
+                'desc'     => __('This field is optional. ', 'streamcast'),
                 'default'  => '/* Your Custom CSS here	  */',
                 'class' => 'bplugins-meta-readonly',
                 'sanitize' => false,
@@ -704,8 +712,7 @@ if (class_exists('CSF')) {
 }
 
 
-function streamcast_exclude_fields_before_save($data)
-{
+function streamcast_exclude_fields_before_save($data) {
 
     $exclude = array(
         'player_skin',

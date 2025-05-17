@@ -3,8 +3,8 @@ Contributors: bplugins, freemius, shehabulislam, taninrahman
 Tags: live stream, icecast, shoutcast, radio player, Audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
 Requires at least: 4.0
-Tested up to: 6.8
-Stable tag: 2.3.0
+Tested up to: 6.8.1
+Stable tag: 2.3.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,9 @@ You cannot embed more than one player in a single page.
 
 
 == Changelog ==
+
+= 2.3.1 - 17 May 2025 =
+* Added a new radio skin.
 
 = 2.3.0 - 19 Feb 2025 =
 * Added gutenberg block and re-customize whole plugin.
