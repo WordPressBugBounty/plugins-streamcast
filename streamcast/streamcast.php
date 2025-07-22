@@ -4,7 +4,7 @@
  * Plugin Name: StreamCast
  * Plugin URI:  https://wordpress.org/plugins/streamcasthttps://wordpress.org/
  * Description: Play iceCast, Shoutcast, Radioco, Radionomy Live stream in Wordpress.
- * Version: 2.3.2
+ * Version: 2.3.3
  * Author: bPlugins
  * Author URI: http://bPlugins.com
  * License: GPLv2
@@ -21,7 +21,7 @@ if ( function_exists( 'str_fs' ) ) {
     // Some Setup
     define( 'STP_PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
     define( 'STP_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-    define( 'STP_PLUGIN_VERSION', '2.3.1' );
+    define( 'STP_PLUGIN_VERSION', '2.3.3' );
     define( 'STP_HAS_FREE', 'streamcast/streamcast.php' === plugin_basename( __FILE__ ) );
     define( 'STP_HAS_PRO', 'streamcast-premium/streamcast.php' === plugin_basename( __FILE__ ) );
     if ( !function_exists( 'str_fs' ) ) {
@@ -49,7 +49,7 @@ if ( function_exists( 'str_fs' ) ) {
                     'has_affiliation' => 'selected',
                     'menu'            => array(
                         'slug'        => 'edit.php?post_type=streamcast',
-                        'first-path'  => 'edit.php?post_type=streamcast&page=dashboard#/dashboard',
+                        'first-path'  => 'edit.php?post_type=streamcast&page=streamcast#/dashboard',
                         'support'     => false,
                         'affiliation' => false,
                     ),
@@ -69,8 +69,8 @@ if ( function_exists( 'str_fs' ) ) {
     // Initialize
     StreamCast::instance();
     // Activation Redirect
-    if ( 'streamcast/streamcast.php' === plugin_basename( __FILE__ ) ) {
-        register_activation_hook( __FILE__, ['StreamCast', 'activation_redirect'] );
-        add_action( 'admin_init', ['StreamCast', 'do_redirect_to_dashboard'] );
-    }
+    // if ('streamcast/streamcast.php' === plugin_basename(__FILE__)) {
+    //     register_activation_hook(__FILE__, ['StreamCast', 'activation_redirect']);
+    //     add_action('admin_init', ['StreamCast', 'do_redirect_to_dashboard']);
+    // }
 }

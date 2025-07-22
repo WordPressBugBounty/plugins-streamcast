@@ -78,7 +78,7 @@ class StreamCast {
                 [],
                 STP_PLUGIN_VERSION
             );
-        } elseif ( 'streamcast_page_dashboard' === $hook ) {
+        } elseif ( 'streamcast_page_streamcast' === $hook ) {
             wp_enqueue_script(
                 'stp-dashboard-js',
                 STP_PLUGIN_DIR . 'build/admin-help.js',
@@ -108,7 +108,7 @@ class StreamCast {
             'Demo & Help',
             'Demo & Help',
             'manage_options',
-            'dashboard',
+            'streamcast',
             [__CLASS__, 'render_dashboard']
         );
     }
@@ -175,14 +175,13 @@ class StreamCast {
         add_option( 'stp_do_activation_redirect', true );
     }
 
-    public static function do_redirect_to_dashboard() {
-        if ( get_option( 'stp_do_activation_redirect' ) ) {
-            delete_option( 'stp_do_activation_redirect' );
-            if ( !is_network_admin() && !isset( $_GET['activate-multi'] ) ) {
-                wp_safe_redirect( admin_url( 'edit.php?post_type=streamcast&page=dashboard#/dashboard' ) );
-                exit;
-            }
-        }
-    }
-
+    // public static function do_redirect_to_dashboard() {
+    //     if (get_option('stp_do_activation_redirect')) {
+    //         delete_option('stp_do_activation_redirect');
+    //         if (!is_network_admin() && !isset($_GET['activate-multi'])) {
+    //             wp_safe_redirect(admin_url('edit.php?post_type=streamcast&page=streamcast#/dashboard'));
+    //             exit;
+    //         }
+    //     }
+    // }
 }
