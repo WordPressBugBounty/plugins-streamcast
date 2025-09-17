@@ -1,10 +1,10 @@
-=== StreamCast - Radio Player for WordPress  ===
+=== StreamCast - Live Radio Streaming Player  ===
 Contributors: bplugins, freemius, shehabulislam, taninrahman
 Tags: live stream, icecast, shoutcast, radio player, Audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
 Requires at least: 4.0
-Tested up to: 6.8.1
-Stable tag: 2.3.3
+Tested up to: 6.8
+Stable tag: 2.3.4
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -69,7 +69,11 @@ Please check that the Protocols of Live Stream and Website. If your website runn
 
 = The Second Player is not showing as the First one ? =
 
-You cannot embed more than one player in a single page. 
+You cannot embed more than one player in a single page.
+
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the StreamCast plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fb645-ef15-4628-91b6-de61c8ef0e78). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 
 
@@ -79,6 +83,10 @@ You cannot embed more than one player in a single page.
 
 
 == Changelog ==
+
+= 2.3.4 - 17 September 2025 =
+* Add Modern Dashboard 
+
 
 = 2.3.1 - 17 May 2025 =
 * Added a new radio skin.

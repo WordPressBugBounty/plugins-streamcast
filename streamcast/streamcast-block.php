@@ -7,10 +7,8 @@ function stpIsPremium()
 
 
 if (!class_exists('SCBPlugin')) {
-	class SCBPlugin
-	{
-		function __construct()
-		{
+	class SCBPlugin {
+		function __construct() {
 			add_action('init', [$this, 'onInit']);
 			add_action('enqueue_block_assets', [$this, 'scb_enqueue_block_assets']);
 
@@ -20,8 +18,7 @@ if (!class_exists('SCBPlugin')) {
 			add_action('rest_api_init', [$this, 'registerSettings']);
 		}
 
-		function stpPipeChecker()
-		{
+		function stpPipeChecker() {
 			$nonce = $_POST['_wpnonce'] ?? null;
 
 			if (!wp_verify_nonce($nonce, 'wp_ajax')) {
@@ -29,12 +26,14 @@ if (!class_exists('SCBPlugin')) {
 			}
 
 			wp_send_json_success([
-				'isPipe' => stpIsPremium()
+				'isPipe' => [
+					'isPipe' => stpIsPremium(),
+					'adminUrl' => admin_url()
+				]
 			]);
 		}
 
-		function registerSettings()
-		{
+		function registerSettings() {
 			register_setting('stpUtils', 'stpUtils', [
 				'show_in_rest' => [
 					'name' => 'stpUtils',
@@ -46,13 +45,11 @@ if (!class_exists('SCBPlugin')) {
 			]);
 		}
 
-		function onInit()
-		{
+		function onInit() {
 			register_block_type(__DIR__ . '/build');
 		}
 
-		function scb_enqueue_block_assets()
-		{
+		function scb_enqueue_block_assets() {
 			wp_enqueue_style('scb-style', STP_PLUGIN_DIR . 'public/css/radio.css', array(), STP_PLUGIN_VERSION, 'all');
 			wp_enqueue_style('scb-player-style', STP_PLUGIN_DIR . 'public/css/styles.css', array(), STP_PLUGIN_VERSION, 'all');
 

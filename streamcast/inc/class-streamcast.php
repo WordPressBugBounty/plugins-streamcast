@@ -22,13 +22,13 @@ class StreamCast {
 
     public static function init() {
         if ( !class_exists( 'CSF' ) ) {
-            require_once STP_PLUGIN_PATH . 'admin/codestar-framework/codestar-framework.php';
+            require_once STP_PLUGIN_PATH . 'frameworks/codestar-framework/codestar-framework.php';
         }
         if ( str_fs()->can_use_premium_code__premium_only() && file_exists( STP_PLUGIN_PATH . 'premium-files/metabox-pro.php' ) ) {
             require_once STP_PLUGIN_PATH . 'premium-files/metabox-pro.php';
         }
-        if ( str_fs()->is_free_plan() && file_exists( STP_PLUGIN_PATH . 'admin/inc/metabox-free.php' ) ) {
-            require_once STP_PLUGIN_PATH . 'admin/inc/metabox-free.php';
+        if ( str_fs()->is_free_plan() && file_exists( STP_PLUGIN_PATH . 'inc/metabox-free.php' ) ) {
+            require_once STP_PLUGIN_PATH . 'inc/metabox-free.php';
         }
     }
 
@@ -71,31 +71,17 @@ class StreamCast {
                 STP_PLUGIN_VERSION
             );
         }
-        if ( 'streamcast_page_help' === $hook ) {
-            wp_enqueue_style(
-                'stp-admin',
-                STP_PLUGIN_DIR . 'admin/css/admin.css',
-                [],
-                STP_PLUGIN_VERSION
-            );
-        } elseif ( 'streamcast_page_streamcast' === $hook ) {
+        if ( 'streamcast_page_streamcast' === $hook ) {
             wp_enqueue_script(
                 'stp-dashboard-js',
-                STP_PLUGIN_DIR . 'build/admin-help.js',
+                STP_PLUGIN_DIR . 'build/admin-dashboard.js',
                 ['react', 'react-dom'],
-                STP_PLUGIN_VERSION,
-                true
-            );
-            wp_enqueue_script(
-                'stp-fs-js',
-                STP_PLUGIN_DIR . 'public/js/fs.js',
-                [],
                 STP_PLUGIN_VERSION,
                 true
             );
             wp_enqueue_style(
                 'tlgb-dashboard-css',
-                STP_PLUGIN_DIR . 'build/admin-help.css',
+                STP_PLUGIN_DIR . 'build/admin-dashboard.css',
                 [],
                 STP_PLUGIN_VERSION
             );
@@ -116,13 +102,14 @@ class StreamCast {
     public static function render_dashboard() {
         ?>
         <style>#wpcontent { padding-left: 0 !important; }</style>
-        <div id="bplAdminHelpPage"
-             data-version="<?php 
-        echo esc_attr( STP_PLUGIN_VERSION );
-        ?>"
-             data-is-premium="<?php 
-        echo esc_attr( stpIsPremium() );
-        ?>">
+        <div id="stpAdminDashboardWrapper"
+            data-info='<?php 
+        echo esc_attr( wp_json_encode( [
+            'version'   => STP_PLUGIN_VERSION,
+            'isPremium' => esc_attr( stpIsPremium() ),
+            'adminUrl'  => admin_url(),
+        ] ) );
+        ?>'>
         </div>
         <?php 
     }
