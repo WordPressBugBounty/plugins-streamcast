@@ -4,7 +4,7 @@ Tags: live stream, icecast, shoutcast, radio player, Audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 2.3.4
+Stable tag: 2.3.5
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -84,9 +84,11 @@ Please report security bugs found in the source code of the StreamCast plugin th
 
 == Changelog ==
 
+= 2.3.5 - 23 September 2025 =
+* Accessibility: Add screen reader support across all audio players
+
 = 2.3.4 - 17 September 2025 =
 * Add Modern Dashboard 
-
 
 = 2.3.1 - 17 May 2025 =
 * Added a new radio skin.

@@ -2960,13 +2960,13 @@ a.plyr__control::before {
 }
 
 .bRadioPlayer .text h2 {
-    font-size: 52px;
+    font-size: 35px;
     color: #fff
 }
 
 @media (max-width:544px) {
     .bRadioPlayer .text h2 {
-        font-size: 30px
+        font-size: 28px
     }
 }
 
