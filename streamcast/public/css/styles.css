@@ -30,7 +30,7 @@
   top: 40px;
 }
 
-.pl {
+.sc_radio .pl {
   background: url(../images/playlist.png) no-repeat;
   cursor: pointer;
   height: 40px;
@@ -40,11 +40,11 @@
   width: 39px;
 }
 
-.pl:hover {
+.sc_radio .pl:hover {
   top: 21px;
 }
 
-.cover {
+.sc_radio .cover {
   border-radius: 5px 5px 5px 5px;
   height: 94px;
   left: 20px;
@@ -53,7 +53,7 @@
   width: 94px;
 }
 
-.controls {
+.sc_radio .controls {
   cursor: pointer;
   left: 0px;
   position: absolute;
@@ -61,61 +61,61 @@
   left: 122px;
 }
 
-.controls .play,
-.controls .pause {
+.sc_radio .controls .play,
+.sc_radio .controls .pause {
   width: 60px;
   height: 60px;
   margin: 0 5px 0px 5px;
 }
 
-.controls .play,
-.controls .pause,
-.controls .rew,
-.controls .fwd,
-.controls .stop {
+.sc_radio .controls .play,
+.sc_radio .controls .pause,
+.sc_radio .controls .rew,
+.sc_radio .controls .fwd,
+.sc_radio .controls .stop {
   text-indent: -10000px;
   border: none;
   float: left;
 }
 
-.controls .rew,
-.controls .fwd,
-.controls .stop {
+.sc_radio .controls .rew,
+.sc_radio .controls .fwd,
+.sc_radio .controls .stop {
   width: 50px;
   height: 50px;
   margin: 5px 5px 5px 5px;
 }
 
-.controls .play {
+.sc_radio .controls .play {
   background: url(../images/play.png) no-repeat;
 }
 
-.controls .pause {
+.sc_radio .controls .pause {
   background: url(../images/pause.png) no-repeat;
   display: none;
 }
 
-.controls .rew {
+.sc_radio .controls .rew {
   background: url(../images/rewind.png) no-repeat;
 }
 
-.controls .fwd {
+.sc_radio .controls .fwd {
   background: url(../images/next.png) no-repeat;
 }
 
-.controls .stop {
+.sc_radio .controls .stop {
   background: url(../images/stop.png) no-repeat;
 }
 
-.hidden {
+.sc_radio .hidden {
   display: none;
 }
 
-.controls .visible {
+.sc_radio .controls .visible {
   display: block;
 }
 
-.volume {
+.sc_radio .volume {
   height: 11px;
   left: 10px;
   position: absolute;
@@ -127,7 +127,7 @@
   background: url(../images/volume-off.png) no-repeat;
 }
 
-.volume-btn {
+.sc_radio .volume-btn {
   background: url(../images/volume-up.png) no-repeat;
   height: 20px;
   width: 20px;
@@ -136,7 +136,7 @@
   top: -4px;
 }
 
-.volume-adjust {
+.sc_radio .volume-adjust {
   height: 11px;
   position: relative;
   width: 90%;
@@ -149,7 +149,7 @@
   background: #151b48;
 }
 
-.progressbar {
+.sc_radio .progressbar {
   background-color: #fff;
   cursor: pointer;
   z-index: 1;
@@ -163,12 +163,12 @@
   margin: 0px 5%;
 }
 
-.novolume .progressbar {
+.sc_radio .novolume .progressbar {
   right: 4.375em;
   /* 70 */
 }
 
-.progressbar div {
+.sc_radio .progressbar div {
   width: 0%;
   height: 15px;
   position: absolute;
@@ -176,17 +176,17 @@
   top: 0;
 }
 
-.bar-loaded {
+.sc_radio .bar-loaded {
   background-color: #f1f1f1;
   z-index: 1;
 }
 
-.bar-played {
+.sc_radio .bar-played {
   background: #151b48;
   z-index: 2;
 }
 
-.timeHolder {
+.sc_radio .timeHolder {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
@@ -196,61 +196,61 @@
   width: 90%;
 }
 
-.time-current,
-.time-duration,
-.time-separator {
+.sc_radio .time-current,
+.sc_radio .time-duration,
+.sc_radio .time-separator {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
 }
 
-.volume .ui-slider-handle {
+.sc_radio .volume .ui-slider-handle {
   background: url("../images/spr.png") no-repeat scroll -201px -188px rgba(0, 0, 0, 0);
   height: 13px;
   width: 13px;
 }
 
-.playlist {
+.sc_radio .playlist {
   display: none;
 }
 
-.playlist li,
-.playlist div {
+.sc_radio .playlist li,
+.sc_radio .playlist div {
   color: #151b48;
   cursor: pointer;
   margin: 0 0 5px 15px;
 }
 
-.playlist li>a,
-.playlist div>a {
+.sc_radio .playlist li>a,
+.sc_radio .playlist div>a {
   color: #151b48;
   text-decoration: none;
 }
 
-.playlist li.active,
-.playlist div.active {
+.sc_radio .playlist li.active,
+.sc_radio .playlist div.active {
   font-weight: bold;
 }
 
-.slick-dots {
+.sc_radio .slick-dots {
   bottom: 5px !important;
 }
 
-.slick-dots li button:before {
+.sc_radio .slick-dots li button:before {
   font-size: 8px !important;
 }
 
-.stp_custom_circle .plyr .plyr__control:hover,
-.stp_custom_circle .plyr .plyr__control:focus,
-.stp_custom_circle .plyr .plyr__control:focus-visible {
+.sc_radio .stp_custom_circle .plyr .plyr__control:hover,
+.sc_radio .stp_custom_circle .plyr .plyr__control:focus,
+.sc_radio .stp_custom_circle .plyr .plyr__control:focus-visible {
   background: transparent;
 }
 
-.stp_custom_circle .plyr {
+.sc_radio .stp_custom_circle .plyr {
   width: fit-content;
 }
 
-.stp_custom_circle .plyr .plyr__controls {
+.sc_radio .stp_custom_circle .plyr .plyr__controls {
   background: transparent;
 }

@@ -11,6 +11,7 @@ class StreamCast {
     }
 
     public function __construct() {
+        add_filter( 'plugin_row_meta', [$this, 'pluginRowMeta'], 10, 2 );
         add_action( 'init', [$this, 'init'], 0 );
         add_action( 'plugins_loaded', [$this, 'plugins_loaded'] );
         add_action( 'plugins_loaded', [__CLASS__, 'load_textdomain'] );
@@ -18,6 +19,18 @@ class StreamCast {
         add_action( 'admin_menu', [__CLASS__, 'add_help_pages'] );
         add_filter( 'admin_footer_text', [__CLASS__, 'admin_footer'] );
         add_shortcode( 'stream', [__CLASS__, 'stream_shortcode'] );
+    }
+
+    function pluginRowMeta( $plugin_meta, $plugin_file ) {
+        if ( strpos( $plugin_file, 'streamcast' ) !== false && time() < strtotime( '2025-12-06' ) ) {
+            $new_links = array(
+                'deal' => "<a href='https://bplugins.com/coupons/?from=plugins.php&plugin=streamcast' target='_blank' style='font-weight: 600; color: #146ef5;'>🎉 Black Friday Sale - Get up to 80% OFF Now!</a>"
+            );
+            
+            $plugin_meta = array_merge( $plugin_meta, $new_links );
+        }
+    
+        return $plugin_meta;
     }
 
     public static function init() {
@@ -106,7 +119,7 @@ class StreamCast {
             data-info='<?php 
         echo esc_attr( wp_json_encode( [
             'version'   => STP_PLUGIN_VERSION,
-            'isPremium' => esc_attr( stpIsPremium() ),
+            'isPremium' => esc_attr( str_fs()->can_use_premium_code() ),
             'adminUrl'  => admin_url(),
         ] ) );
         ?>'>
