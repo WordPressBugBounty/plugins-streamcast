@@ -11,7 +11,6 @@ class StreamCast {
     }
 
     public function __construct() {
-        add_filter( 'plugin_row_meta', [$this, 'pluginRowMeta'], 10, 2 );
         add_action( 'init', [$this, 'init'], 0 );
         add_action( 'plugins_loaded', [$this, 'plugins_loaded'] );
         add_action( 'plugins_loaded', [__CLASS__, 'load_textdomain'] );
@@ -19,18 +18,6 @@ class StreamCast {
         add_action( 'admin_menu', [__CLASS__, 'add_help_pages'] );
         add_filter( 'admin_footer_text', [__CLASS__, 'admin_footer'] );
         add_shortcode( 'stream', [__CLASS__, 'stream_shortcode'] );
-    }
-
-    function pluginRowMeta( $plugin_meta, $plugin_file ) {
-        if ( strpos( $plugin_file, 'streamcast' ) !== false && time() < strtotime( '2025-12-06' ) ) {
-            $new_links = array(
-                'deal' => "<a href='https://bplugins.com/coupons/?from=plugins.php&plugin=streamcast' target='_blank' style='font-weight: 600; color: #146ef5;'>🎉 Black Friday Sale - Get up to 80% OFF Now!</a>"
-            );
-            
-            $plugin_meta = array_merge( $plugin_meta, $new_links );
-        }
-    
-        return $plugin_meta;
     }
 
     public static function init() {
@@ -42,6 +29,9 @@ class StreamCast {
         }
         if ( str_fs()->is_free_plan() && file_exists( STP_PLUGIN_PATH . 'inc/metabox-free.php' ) ) {
             require_once STP_PLUGIN_PATH . 'inc/metabox-free.php';
+        }
+        if ( STP_HAS_PRO ) {
+            require_once STP_PLUGIN_PATH . 'inc/LicenseActivation.php';
         }
     }
 
@@ -85,18 +75,19 @@ class StreamCast {
             );
         }
         if ( 'streamcast_page_streamcast' === $hook ) {
-            wp_enqueue_script(
-                'stp-dashboard-js',
-                STP_PLUGIN_DIR . 'build/admin-dashboard.js',
-                ['react', 'react-dom'],
-                STP_PLUGIN_VERSION,
-                true
-            );
             wp_enqueue_style(
-                'tlgb-dashboard-css',
+                'stp-dashboard-css',
                 STP_PLUGIN_DIR . 'build/admin-dashboard.css',
                 [],
                 STP_PLUGIN_VERSION
+            );
+            $asset_file = (include STP_PLUGIN_PATH . 'build/admin-dashboard.asset.php');
+            wp_enqueue_script(
+                'apb-admin-dashboard',
+                STP_PLUGIN_DIR . 'build/admin-dashboard.js',
+                array_merge( $asset_file['dependencies'], ['wp-util'] ),
+                STP_PLUGIN_VERSION,
+                true
             );
         }
     }
@@ -114,16 +105,16 @@ class StreamCast {
 
     public static function render_dashboard() {
         ?>
-        <style>#wpcontent { padding-left: 0 !important; }</style>
         <div id="stpAdminDashboardWrapper"
             data-info='<?php 
         echo esc_attr( wp_json_encode( [
-            'version'   => STP_PLUGIN_VERSION,
-            'isPremium' => esc_attr( str_fs()->can_use_premium_code() ),
-            'adminUrl'  => admin_url(),
+            'version'            => STP_PLUGIN_VERSION,
+            'isPremium'          => str_fs()->can_use_premium_code(),
+            'hasPro'             => STP_HAS_PRO,
+            'licenseActiveNonce' => wp_create_nonce( 'bPlLicenseActivation' ),
         ] ) );
-        ?>'>
-        </div>
+        ?>'
+        ></div>
         <?php 
     }
 

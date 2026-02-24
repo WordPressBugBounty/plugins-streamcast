@@ -2,9 +2,9 @@
 Contributors: bplugins, taninrahman, shehabulislam, freemius
 Tags: live stream, icecast, shoutcast, radio player, audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
-Requires at least: 6.5+
+Requires at least: 6.6+
 Tested up to: 6.9
-Stable tag: 2.3.8
+Stable tag: 2.3.9
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -245,6 +245,9 @@ Please report security bugs found in the source code of the StreamCast plugin th
 ---
 
 == Changelog ==
+
+= 2.3.9 - 23 February 2026 =
+* **Update:** Redesigned the dashboard with a modern and improved user interface, replacing the previous outdated layout.
 
 = 2.3.7 - 22 November 2025 =
 * Updated readme.txt and fixed issues
