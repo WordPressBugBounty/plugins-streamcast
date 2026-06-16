@@ -1,0 +1,137 @@
+.streamcast_shortcode_box_after_title {
+  display: flex;
+  background: #fff;
+  padding: 5px 15px;
+  align-items: center;
+  gap: 15px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+.streamcast_shortcode_box_after_title label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.streamcast_shortcode_box_after_title .shortcode_area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.streamcast_shortcode_box_after_title .shortcode_area svg {
+  cursor: pointer;
+}
+
+/* Desing upgrade menu */
+.fs-submenu-item.streamcast.pricing.upgrade-mode {
+  background: #fb7a01;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 40px 6px 15px;
+}
+
+
+.button.button-bplugins {
+  background: #fb7a01;
+  color: #fff;
+  border: none;
+}
+
+.button.button-bplugins:active,
+.button.button-bplugins:focus {
+  background: #d66801;
+  color: #fff;
+}
+
+/* Pro Notice Box Styles */
+.streamcast-pro-notice-box {
+  background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ffeed6;
+  box-shadow: 0 4px 15px rgba(251, 122, 1, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.streamcast-pro-notice-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #fb7a01;
+}
+
+.streamcast-pro-notice-title {
+  margin-top: 0 !important;
+  color: #d66801 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.streamcast-pro-notice-desc {
+  font-size: 14px;
+  color: #8c4400;
+  margin-bottom: 20px;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.streamcast-pro-notice-list {
+  margin: 15px 0 !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+}
+
+.streamcast-pro-notice-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #d66801;
+  font-size: 13.5px;
+}
+
+.streamcast-pro-notice-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #fb7a01;
+  font-weight: bold;
+}
+
+.streamcast-pro-notice-list li strong {
+  color: #8c4400;
+}
+
+.streamcast-pro-notice-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fb7a01;
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(251, 122, 1, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.streamcast-pro-notice-button:hover {
+  background: #d66801;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(251, 122, 1, 0.3);
+  color: #fff !important;
+}

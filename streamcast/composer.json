@@ -1,0 +1,22 @@
+{
+    "name": "bplugins/streamcast-free",
+    "description": "Play iceCast, Shoutcast, Radioco, Radionomy Live stream in Wordpress.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "bPlugins",
+            "email": "info@bplugins.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "classmap": [
+            "inc/",
+            "class-streamcast-block.php"
+        ]
+    }
+}

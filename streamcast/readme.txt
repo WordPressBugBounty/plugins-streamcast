@@ -2,9 +2,9 @@
 Contributors: bplugins, taninrahman, shehabulislam, freemius
 Tags: live stream, icecast, shoutcast, radio player, audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
-Requires at least: 6.6+
-Tested up to: 6.9
-Stable tag: 2.3.9
+Requires at least: 6.2
+Tested up to: 7.0
+Stable tag: 2.4.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,9 +44,9 @@ https://www.youtube.com/watch?v=ad_LKLe_YQg
 
 ---
 
-### 🎧 StreamCast Pro – Unlock Premium Features
+### 🎧 StreamCast Pro – Premium Version Features
 
-Upgrade to **StreamCast Pro** to access advanced player controls, premium skins, and full customization options.
+The **StreamCast Premium** version includes advanced player controls, professional skins, and full customization options.
 
 **Pro Features Include:**
 
@@ -60,7 +60,7 @@ Upgrade to **StreamCast Pro** to access advanced player controls, premium skins,
 * Custom CSS Styling  
 * Priority Support & Future Updates  
 
-👉 [**Upgrade To Pro**](https://bplugins.com/products/streamcast-radio-player/pricing/)
+👉 [**Get Premium Version**](https://bplugins.com/products/streamcast-radio-player/pricing/)
 
 ---
 
@@ -230,7 +230,82 @@ It works with all page builders that support shortcodes.
 = Where do I report security bugs found in this plugin? =
 Please report security bugs found in the source code of the StreamCast plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fb205-6f66-453b-bdaa-c7c587b83810). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
+== Source Code ==
+
+You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository: 
+[**StreamCast on GitHub**](https://github.com/bPlugins/streamcast-wp)
+
+== External Services ==
+
+This plugin connects to the following external services to provide enhanced functionality:
+
+1. **Muses Radio Player API** (muses.org)
+   - Used for: Fetching player skins and sending anonymous usage statistics
+   - Data sent: Player configuration and anonymous listener data (legacy player reports)
+   - Loaded on: Pages where the radio player block or shortcode is displayed
+   - Terms: https://www.muses.org/terms-and-conditions | Privacy Policy: https://www.muses.org/privacy-policy
+
+2. **Plyr Video Player Assets** (Local)
+   - Used for: Localized SVG icons and blank video assets for the Plyr player
+   - Data sent: None (Assets are bundled locally)
+   - Loaded on: Pages using the shortcode or block
+   - Terms: https://plyr.io/ | Privacy Policy: https://plyr.io/
+
+3. **YouTube Data API** (googleapis.com)
+   - Used for: Fetching video/stream metadata (title) by video ID
+   - Data sent: YouTube video ID and API key
+   - Loaded on: Pages where a YouTube stream source is configured
+   - Terms: https://policies.google.com/terms | Privacy: https://policies.google.com/privacy
+
+4. **Google IMA SDK** (imasdk.googleapis.com)
+   - Used for: Loading video ad support (VAST/VMAP ads)
+   - Data sent: Standard ad request data
+   - Loaded on: Pages
+   - Terms: https://policies.google.com/terms | Privacy: https://policies.google.com/privacy
+
+5. **Vimeo API** (vimeo.com)
+   - Used for: Fetching Vimeo video metadata
+   - Data sent: Vimeo video ID
+   - Loaded on: Pages where a Vimeo stream source is configured
+   - Terms: https://vimeo.com/terms | Privacy: https://vimeo.com/privacy
+
+6. **AniView Ad Server** (go.aniview.com)
+   - Used for: Serving VAST video ads
+   - Data sent: Standard VAST ad request parameters
+   - Loaded on: Pages where AniView ads are enabled
+   - Terms: https://www.aniview.com/terms-of-service/ | Privacy Policy: https://www.aniview.com/privacy-policy/
+
+7. **bPlugins Templates** (templates.bplugins.com)
+   - Used for: Loading default radio station artwork and player skins
+   - Data sent: Asset request (no personal data)
+   - Loaded on: Admin dashboard and player initialization
+   - Terms: https://bplugins.com/terms-of-service/ | Privacy Policy: https://bplugins.com/privacy-policy/
+
 ---
+
+== Third-Party Libraries ==
+
+This plugin bundles the following third-party JavaScript/PHP libraries.
+
+= Codestar Framework =
+
+* **Source:** [http://codestarframework.com/](http://codestarframework.com/)
+* **GitHub:** [https://github.com/Codestar/codestar-framework](https://github.com/Codestar/codestar-framework)
+* **License:** GPLv2 or later – [https://github.com/Codestar/codestar-framework/blob/master/LICENSE.md](https://github.com/Codestar/codestar-framework/blob/master/LICENSE.md)
+* **Purpose:** Provides the options framework for the plugin's settings and shortcode generator.
+
+= Freemius SDK =
+
+* **Source:** [https://freemius.com/](https://freemius.com/)
+* **GitHub:** [https://github.com/Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
+* **License:** GPLv3 – [https://github.com/Freemius/wordpress-sdk/blob/master/LICENSE.txt](https://github.com/Freemius/wordpress-sdk/blob/master/LICENSE.txt)
+* **Purpose:** Provides opt-in usage tracking and analytics to help improve the plugin.
+
+= bpl-tools =
+* Source / GitHub: https://github.com/bPlugins/bpl-tools
+* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
 
 == Screenshots ==
 
@@ -245,6 +320,28 @@ Please report security bugs found in the source code of the StreamCast plugin th
 ---
 
 == Changelog ==
+
+= 2.4.2 - 26 May 2026 =
+* Update: Improved internal dependency loading structure using Composer autoloading.
+* Fix: Strengthened validation and access controls in the option settings framework.
+* Internationalization: Corrected translation text domain mapping for all checkbox fields.
+
+= 2.4.1 - 10 May 2026 =
+* Compliance: Renamed all global prefixes and namespaces from `STP` to `StreamCast` and `csf` to `streamcast_csf`.
+* Security: Implemented robust output escaping and input sanitization across the entire codebase and framework.
+* Security: Replaced all `json_encode` calls with `wp_json_encode` for safer data handling.
+* Security: Sanitized all nonces and JSON-decoded data to prevent XSS and other vulnerabilities.
+* Maintenance: Renamed generic JavaScript variables and structural cleanup to meet WordPress.org standards.
+
+= 2.4.0 - 6 May 2026 =
+* Compliance: Removed all trialware/feature-gating logic to ensure full functionality for all users.
+* Compliance: Localized third-party assets (WebFontLoader, FontAwesome, Plyr, Muses) to eliminate remote CDN dependencies.
+* Privacy: Removed unconditional Google Analytics tracking from the player script.
+* Compliance: Standardized internationalization (i18n) by migrating all text domains to 'streamcast'.
+* Security: Enhanced output escaping and data sanitization in shortcodes and Gutenberg blocks.
+* Enhancement: Added explicit "External Services" and "Source Code" documentation in readme.txt.
+* Fix: Updated shortcode attributes to correctly honor user-provided stream URLs and background colors.
+* Maintenance: Updated compatibility tags and improved code adherence to WordPress.org standards.
 
 = 2.3.9 - 23 February 2026 =
 * **Update:** Redesigned the dashboard with a modern and improved user interface, replacing the previous outdated layout.

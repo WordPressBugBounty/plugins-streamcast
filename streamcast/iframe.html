@@ -5,18 +5,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <script src="https://hosted.muses.org/mrp.js"></script>
+        <script src="./assets/vendor/muses-player/mrp.js"></script>
         <script>
             function getQueryParam(param) {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(param);
             }
-            const playerData = window.top[getQueryParam("id")];
+            let playerData = null;
+            if (window.top && window.top.location.origin === window.location.origin) {
+                playerData = window.top[getQueryParam("id")];
+            }
         </script>
         <style>
-            /* #MusesRadioPlayer-HTML5-player-0 {
-                margin: auto;
-            } */
             body {
                 margin: 0;
                 width: inherit;
@@ -27,9 +27,13 @@
 
     <body>
         <script type="text/javascript">
-            MRP.insert(playerData)
-            MRP.setTitle(playerData.title);
-            window.top[getQueryParam("id")] = null;
+            if (playerData) {
+                window.MRP?.insert(playerData)
+                window.MRP?.setTitle(playerData.title);
+                if (window.top && window.top.location.origin === window.location.origin) {
+                    window.top[getQueryParam("id")] = null;
+                }
+            }
         </script>
     </body>
 

@@ -13,7 +13,7 @@
     "live player",
     "live stream player"
   ],
-  "textdomain": "b-blocks",
+  "textdomain": "streamcast",
   "attributes": {
     "align": {
       "type": "string",
@@ -116,16 +116,9 @@
   "example": {
     "attributes": {}
   },
-  "editorScript": [
-    "file:./index.js",
-    "wp-api"
-  ],
+  "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./view.css",
   "render": "file:./render.php",
-  "viewScript": [
-    "file:./view.js",
-    "react",
-    "react-dom"
-  ]
+  "viewScript": "file:./view.js"
 }

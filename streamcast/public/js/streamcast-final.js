@@ -2547,8 +2547,8 @@
         disableContextMenu: !0,
         loadSprite: !0,
         iconPrefix: "plyr",
-        iconUrl: "https://cdn.plyr.io/3.4.8/plyr.svg",
-        blankVideo: "https://cdn.plyr.io/static/blank.mp4",
+        iconUrl: (typeof streamcastData !== 'undefined' && streamcastData.plyrSvg) ? streamcastData.plyrSvg : '',
+        blankVideo: (typeof streamcastData !== 'undefined' && streamcastData.plyrBlankVideo) ? streamcastData.plyrBlankVideo : '',
         quality: {
           default: 576,
           options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240],
@@ -8067,37 +8067,17 @@ if (2 == mrx24gx.length) {
         };
         "stop" == b && (d.metric1 = c.ui.getPlayTime());
         z.initialize(c, d);
-        ga("musesTracker.send", "event", a, b, d);
+        // ga('musesTracker.send', 'event', a, b, d);
       }
     };
     z.initialize = function (a, b) {
       z.initialized ||
         ((z.initialized = !0),
-        (function (a, b, d, e, h, k, l) {
-          a.GoogleAnalyticsObject = h;
-          a[h] =
-            a[h] ||
-            function () {
-              (a[h].q = a[h].q || []).push(arguments);
-            };
-          a[h].l = 1 * new Date();
-          k = b.createElement(d);
-          l = b.getElementsByTagName(d)[0];
-          k.async = 1;
-          k.src = e;
-          l.parentNode.insertBefore(k, l);
-        })(
-          window,
-          document,
-          "script",
-          "https://www.google-analytics.com/analytics.js",
-          "ga"
-        ),
-        ga("create", "UA-12297597-7", "auto", "musesTracker"),
+        /* GA Removed */
         (new G(3e5).run = function () {
           a.shouldBePlaying() &&
             ((b.metric1 = a.ui.getPlayTime()),
-            ga("musesTracker.send", "event", "play", "playing", b));
+            // ga('musesTracker.send', 'event', 'play', 'playing', b));
         }));
     };
     var B = (d.muses.UI = function (a, b) {

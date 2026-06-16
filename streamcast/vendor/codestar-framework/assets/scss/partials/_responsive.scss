@@ -1,0 +1,157 @@
+/**
+ * 12. Responsive
+ */
+@media only screen and (max-width:1200px){
+
+  .streamcast-csf-metabox{
+
+    .streamcast-csf-field{
+
+      .streamcast-csf-title{
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .streamcast-csf-fieldset{
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:782px){
+
+  .streamcast-csf-header-inner{
+    text-align: center;
+
+    h1{
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .streamcast-csf-form-result{
+    float: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .streamcast-csf-search,
+  .streamcast-csf-header-right,
+  .streamcast-csf-header-left{
+    width: 100%;
+  }
+
+  .streamcast-csf-search{
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .streamcast-csf-footer{
+    text-align: center;
+  }
+
+  .streamcast-csf-buttons{
+    float: none;
+  }
+
+  .streamcast-csf-copyright{
+    float: none;
+    margin-top: 10px;
+  }
+
+  .streamcast-csf-nav,
+  .streamcast-csf-expand-all,
+  .streamcast-csf-reset-section,
+  .streamcast-csf-nav-background{
+    display: none !important;
+  }
+
+  .streamcast-csf-nav-normal + .streamcast-csf-content{
+    margin-left: 0;
+  }
+
+  .streamcast-csf-section-title,
+  .streamcast-csf-section{
+    display: block !important;
+  }
+
+  .streamcast-csf-field{
+
+    .streamcast-csf-title{
+      float: none;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .streamcast-csf-fieldset{
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .streamcast-csf-field-color{
+
+    .button.wp-picker-clear{
+      padding: 0 8px;
+      line-height: 2.14285714;
+      min-height: 32px;
+    }
+  }
+
+  .streamcast-csf-profile-options,
+  .streamcast-csf-taxonomy-edit-fields{
+
+    > .streamcast-csf-field{
+
+      > .streamcast-csf-title{
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      > .streamcast-csf-fieldset{
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+  .streamcast-csf-nav-menu-options{
+
+    > .streamcast-csf-fields{
+      margin-left: -10px;
+      margin-right: -10px;
+
+      > .streamcast-csf-field{
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 782px) {
+
+  .streamcast-csf-modal{
+
+    .streamcast-csf-modal-inner{
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-height: 750px) {
+
+  .streamcast-csf-modal{
+
+    .streamcast-csf-modal-inner{
+      height: auto;
+    }
+
+    .streamcast-csf-modal-content{
+      height: calc(100vh - 200px);
+    }
+  }
+}
