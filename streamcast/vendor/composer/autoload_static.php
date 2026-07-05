@@ -11,7 +11,7 @@ class ComposerStaticInitdb8d8612fbf36607602b8210bd95deba
         'StreamCast\\AJAX' => __DIR__ . '/../..' . '/inc/class-streamcast-ajax.php',
         'StreamCast\\Functions' => __DIR__ . '/../..' . '/inc/class-streamcast-functions.php',
         'StreamCast\\STREAMCAST_Admin' => __DIR__ . '/../..' . '/inc/class-streamcast-admin.php',
-        'StreamCast\\STREAMCAST_Block' => __DIR__ . '/../..' . '/class-streamcast-block.php',
+        'StreamCast\\STREAMCAST_Block' => __DIR__ . '/../..' . '/inc/class-streamcast-block.php',
         'StreamCast\\STREAMCAST_Main' => __DIR__ . '/../..' . '/inc/class-streamcast-main.php',
         'StreamCast\\STREAMCAST_Shortcode' => __DIR__ . '/../..' . '/inc/class-streamcast-shortcode.php',
     );

@@ -14,7 +14,7 @@ class STREAMCAST_Main {
 		}
 
 		// Require remaining procedural files (not classes/namespaces)
-		require_once STREAMCAST_PLUGIN_PATH . 'mimes/enable-mime-type.php';
+		require_once STREAMCAST_PLUGIN_PATH . 'inc/enable-mime-type.php';
 		require_once STREAMCAST_PLUGIN_PATH . 'inc/class-streamcast-functions.php'; // Registers global helper streamcast_get_meta()
 
 		if (!class_exists('STREAMCAST_STREAMCAST_CSF')) {
@@ -81,6 +81,7 @@ class STREAMCAST_Main {
 			'version' => STREAMCAST_PLUGIN_VERSION,
 			'isPremium' => false,
 			'hasPro' => false,
+			'adminUrl' => admin_url(),
 			'licenseActiveNonce' => wp_create_nonce('bPlLicenseActivation')
 		])); ?>'></div>
 		<?php

@@ -4,7 +4,7 @@ Tags: live stream, icecast, shoutcast, radio player, audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.2
 Tested up to: 7.0
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -320,6 +320,11 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 ---
 
 == Changelog ==
+
+= 2.4.3 - 5 July 2026 =
+* **Refactor:** Reorganized plugin architecture by keeping blocks under src/blocks/streamcast/ and admin dashboard under src/admin-dashboard/.
+* **Refactor:** Realigned all backend PHP file and folder structures, namespaces, classes, and constants to match the StreamCast free repository on GitHub while preserving all premium-only features.
+* **Update:** Upgraded admin dashboard welcome layout to use the unified bpl-tools Admin experience.
 
 = 2.4.2 - 26 May 2026 =
 * Update: Improved internal dependency loading structure using Composer autoloading.

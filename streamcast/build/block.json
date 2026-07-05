@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "scb/streamcast-block",
-  "version": "2.3.7",
+  "version": "2.4.3",
   "title": "StreamCast Block",
   "category": "widgets",
   "description": "Play iceCast, Shoutcast, Radionomy, Radiojar, RadioCo and Audio Live stream in Wordpress.",

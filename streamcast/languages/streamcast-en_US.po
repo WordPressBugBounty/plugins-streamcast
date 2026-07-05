@@ -2,21 +2,21 @@
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: StreamCast - Free 2.4.1\n"
+"Project-Id-Version: StreamCast – Live Radio Streaming Player 2.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamcast-free\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-10T05:55:20+00:00\n"
+"POT-Creation-Date: 2026-07-05T09:20:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: streamcast\n"
 
 #. Plugin Name of the plugin
 #: streamcast.php
-msgid "StreamCast - Free"
+msgid "StreamCast – Live Radio Streaming Player"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -37,543 +37,6 @@ msgstr ""
 #. Author URI of the plugin
 #: streamcast.php
 msgid "http://bPlugins.com"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:169
-msgid "Error while saving the changes."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:229
-msgid "Settings successfully imported."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:241
-#: frameworks/codestar-framework/classes/admin-options.class.php:257
-msgid "Default settings restored."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:328
-msgid "Settings saved."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:509
-msgid "You have unsaved changes, save your changes!"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:511
-msgid "show all settings"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:513
-#: frameworks/codestar-framework/fields/icon/icon.php:57
-msgid "Search..."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:516
-#: frameworks/codestar-framework/classes/admin-options.class.php:639
-msgid "Save"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:516
-#: frameworks/codestar-framework/classes/admin-options.class.php:639
-msgid "Saving..."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:517
-#: frameworks/codestar-framework/classes/admin-options.class.php:640
-msgid "Reset Section"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:517
-#: frameworks/codestar-framework/classes/admin-options.class.php:640
-msgid "Are you sure to reset this section options?"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:518
-#: frameworks/codestar-framework/classes/admin-options.class.php:641
-msgid "Reset All"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:518
-#: frameworks/codestar-framework/classes/admin-options.class.php:641
-#: frameworks/codestar-framework/classes/comment-options.class.php:201
-#: frameworks/codestar-framework/classes/metabox-options.class.php:278
-#: frameworks/codestar-framework/fields/backup/backup.php:31
-msgid "Reset"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:518
-#: frameworks/codestar-framework/classes/admin-options.class.php:641
-msgid "Are you sure you want to reset all settings to default values?"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/admin-options.class.php:616
-#: frameworks/codestar-framework/classes/comment-options.class.php:184
-#: frameworks/codestar-framework/classes/metabox-options.class.php:261
-#: frameworks/codestar-framework/fields/button_set/button_set.php:56
-#: frameworks/codestar-framework/fields/checkbox/checkbox.php:82
-#: frameworks/codestar-framework/fields/radio/radio.php:75
-#: frameworks/codestar-framework/fields/select/select.php:113
-#: frameworks/codestar-framework/functions/actions.php:41
-msgid "No data available."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/comment-options.class.php:202
-#: frameworks/codestar-framework/classes/metabox-options.class.php:279
-msgid "update post"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/comment-options.class.php:202
-#: frameworks/codestar-framework/classes/metabox-options.class.php:279
-msgid "Cancel"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:605
-msgid "Are you sure?"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:606
-#, php-format
-msgid "Please enter %s or more characters"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:607
-msgid "Searching..."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:608
-msgid "No results found."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:709
-msgid "Oops! Not allowed."
-msgstr ""
-
-#: frameworks/codestar-framework/classes/setup.class.php:777
-#: frameworks/codestar-framework/classes/setup.class.php:781
-msgid "Field not found!"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/shortcode-options.class.php:210
-#: frameworks/codestar-framework/fields/group/group.php:23
-msgid "Add New"
-msgstr ""
-
-#: frameworks/codestar-framework/classes/shortcode-options.class.php:247
-#: frameworks/codestar-framework/functions/actions.php:16
-#: frameworks/codestar-framework/functions/actions.php:68
-#: frameworks/codestar-framework/functions/actions.php:105
-#: frameworks/codestar-framework/functions/actions.php:142
-#: frameworks/codestar-framework/functions/actions.php:168
-msgid "Error: Invalid nonce verification."
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:36
-#: frameworks/codestar-framework/fields/media/media.php:59
-msgid "Not selected"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:72
-#: frameworks/codestar-framework/fields/date/date.php:31
-#: frameworks/codestar-framework/fields/datetime/datetime.php:36
-msgid "From"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:90
-#: frameworks/codestar-framework/fields/date/date.php:32
-#: frameworks/codestar-framework/fields/datetime/datetime.php:37
-msgid "To"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:108
-msgid "Direction"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:114
-msgid "Gradient Direction"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:115
-msgid "&#8659; top to bottom"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:116
-msgid "&#8658; left to right"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:117
-msgid "&#8664; corner top to right"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:118
-msgid "&#8665; corner top to left"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:161
-msgid "Background Position"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:162
-msgid "Left Top"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:163
-msgid "Left Center"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:164
-msgid "Left Bottom"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:165
-msgid "Center Top"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:166
-msgid "Center Center"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:167
-msgid "Center Bottom"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:168
-msgid "Right Top"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:169
-msgid "Right Center"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:170
-msgid "Right Bottom"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:184
-msgid "Background Repeat"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:185
-msgid "Repeat"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:186
-msgid "No Repeat"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:187
-msgid "Repeat Horizontally"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:188
-msgid "Repeat Vertically"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:202
-msgid "Background Attachment"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:203
-msgid "Scroll"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:204
-msgid "Fixed"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:218
-msgid "Background Size"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:219
-msgid "Cover"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:220
-msgid "Contain"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:221
-msgid "Auto"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:235
-msgid "Background Origin"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:236
-#: frameworks/codestar-framework/fields/background/background.php:254
-msgid "Padding Box"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:237
-#: frameworks/codestar-framework/fields/background/background.php:253
-msgid "Border Box"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:238
-#: frameworks/codestar-framework/fields/background/background.php:255
-msgid "Content Box"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:252
-msgid "Background Clip"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:269
-msgid "Background Blend Mode"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:270
-#: frameworks/codestar-framework/fields/link_color/link_color.php:36
-msgid "Normal"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:271
-msgid "Multiply"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:272
-msgid "Screen"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:273
-msgid "Overlay"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:274
-msgid "Darken"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:275
-msgid "Lighten"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:276
-msgid "Color Dodge"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:277
-msgid "Saturation"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:278
-msgid "Color"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/background/background.php:279
-msgid "Luminosity"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/backup/backup.php:26
-msgid "Import"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/backup/backup.php:29
-msgid "Export & Download"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:25
-#: frameworks/codestar-framework/fields/spacing/spacing.php:25
-msgid "top"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:26
-#: frameworks/codestar-framework/fields/spacing/spacing.php:26
-msgid "right"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:27
-#: frameworks/codestar-framework/fields/spacing/spacing.php:27
-msgid "bottom"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:28
-#: frameworks/codestar-framework/fields/spacing/spacing.php:28
-msgid "left"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:29
-#: frameworks/codestar-framework/fields/spacing/spacing.php:29
-msgid "all"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:51
-msgid "Solid"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:52
-msgid "Dashed"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:53
-msgid "Dotted"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:54
-msgid "Double"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:55
-msgid "Inset"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:56
-msgid "Outset"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:57
-msgid "Groove"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:58
-msgid "ridge"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/border/border.php:59
-msgid "None"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/dimensions/dimensions.php:22
-msgid "width"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/dimensions/dimensions.php:23
-msgid "height"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/gallery/gallery.php:20
-msgid "Add Gallery"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/gallery/gallery.php:21
-msgid "Edit Gallery"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/gallery/gallery.php:22
-msgid "Clear"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/group/group.php:41
-#: frameworks/codestar-framework/fields/repeater/repeater.php:27
-msgid "Error: Field ID conflict."
-msgstr ""
-
-#: frameworks/codestar-framework/fields/group/group.php:52
-#: frameworks/codestar-framework/fields/group/group.php:107
-#: frameworks/codestar-framework/fields/repeater/repeater.php:48
-#: frameworks/codestar-framework/fields/repeater/repeater.php:76
-msgid "Are you sure to delete this item?"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/group/group.php:141
-#: frameworks/codestar-framework/fields/repeater/repeater.php:89
-msgid "You cannot add more."
-msgstr ""
-
-#: frameworks/codestar-framework/fields/group/group.php:142
-#: frameworks/codestar-framework/fields/repeater/repeater.php:90
-msgid "You cannot remove more."
-msgstr ""
-
-#: frameworks/codestar-framework/fields/icon/icon.php:20
-#: frameworks/codestar-framework/fields/icon/icon.php:53
-msgid "Add Icon"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/icon/icon.php:21
-msgid "Remove Icon"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link/link.php:20
-msgid "Add Link"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link/link.php:21
-msgid "Edit Link"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link/link.php:22
-msgid "Remove Link"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link_color/link_color.php:37
-msgid "Hover"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link_color/link_color.php:38
-msgid "Active"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link_color/link_color.php:39
-msgid "Visited"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/link_color/link_color.php:40
-msgid "Focus"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/media/media.php:25
-#: frameworks/codestar-framework/fields/upload/upload.php:24
-msgid "Upload"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/media/media.php:26
-#: frameworks/codestar-framework/fields/upload/upload.php:25
-msgid "Remove"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/sorter/sorter.php:21
-msgid "Enabled"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/sorter/sorter.php:22
-msgid "Disabled"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/switcher/switcher.php:20
-msgid "On"
-msgstr ""
-
-#: frameworks/codestar-framework/fields/switcher/switcher.php:21
-msgid "Off"
-msgstr ""
-
-#: frameworks/codestar-framework/functions/actions.php:72
-#: frameworks/codestar-framework/functions/actions.php:111
-msgid "Error: Invalid key."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/actions.php:115
-msgid "Error: The response is not a valid JSON response."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/actions.php:176
-msgid "Error: Invalid term ID."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/actions.php:182
-msgid "Error: You do not have permission to do that."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/validate.php:14
-#: frameworks/codestar-framework/functions/validate.php:86
-msgid "Please enter a valid email address."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/validate.php:32
-#: frameworks/codestar-framework/functions/validate.php:106
-msgid "Please enter a valid number."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/validate.php:50
-#: frameworks/codestar-framework/functions/validate.php:126
-msgid "This field is required."
-msgstr ""
-
-#: frameworks/codestar-framework/functions/validate.php:68
-#: frameworks/codestar-framework/functions/validate.php:146
-msgid "Please enter a valid URL."
 msgstr ""
 
 #: inc/class-streamcast-admin.php:24
@@ -618,7 +81,7 @@ msgstr ""
 msgid "Copy and paste this shortcode into your posts, pages and widget"
 msgstr ""
 
-#: inc/class-streamcast-main.php:128
+#: inc/class-streamcast-main.php:133
 msgid "Help & Demo's"
 msgstr ""
 
@@ -788,12 +251,40 @@ msgstr ""
 msgid "Hello London"
 msgstr ""
 
-#: src/admin/post.js:10
+#: src/admin-dashboard/post.js:9
 msgid "Copied Successfully!"
 msgstr ""
 
-#: src/admin/post.js:12
+#: src/admin-dashboard/post.js:11
 msgid "Copy To Clipboard"
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:167
+msgid "Customize You Player with some awesome options"
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:168
+msgid "Enhance your player using 85+ radio player skins."
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:169
+msgid "Works great with Shoutcast, Icecast, and other compatible streaming servers."
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:170
+msgid "This plugin creates ShortCode for Each radio. So that you can play radio anywhere without coding."
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:171
+msgid "Collect Stream Name or Title or Artist Name from you streaming name."
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:172
+msgid "Alignment your player like left, center, right."
+msgstr ""
+
+#: src/admin-dashboard/utils/data.js:173
+msgid "Set image for player background, player poster or art image."
 msgstr ""
 
 #: src/Components/Backend/Settings/General/General.js:18

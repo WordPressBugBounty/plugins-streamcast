@@ -10,7 +10,7 @@ return array(
     'StreamCast\\AJAX' => $baseDir . '/inc/class-streamcast-ajax.php',
     'StreamCast\\Functions' => $baseDir . '/inc/class-streamcast-functions.php',
     'StreamCast\\STREAMCAST_Admin' => $baseDir . '/inc/class-streamcast-admin.php',
-    'StreamCast\\STREAMCAST_Block' => $baseDir . '/class-streamcast-block.php',
+    'StreamCast\\STREAMCAST_Block' => $baseDir . '/inc/class-streamcast-block.php',
     'StreamCast\\STREAMCAST_Main' => $baseDir . '/inc/class-streamcast-main.php',
     'StreamCast\\STREAMCAST_Shortcode' => $baseDir . '/inc/class-streamcast-shortcode.php',
 );

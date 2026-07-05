@@ -26,9 +26,9 @@
 
 /* Desing upgrade menu */
 .fs-submenu-item.streamcast.pricing.upgrade-mode {
-  background: #fb7a01;
-  border-radius: 3px;
-  color: #fff;
+  background: #39920D;
+  border-radius: 0;
+  color: #ffffff;
   display: inline-block;
   padding: 6px 40px 6px 15px;
 }
@@ -38,6 +38,7 @@
   background: #fb7a01;
   color: #fff;
   border: none;
+  border-radius: 0;
 }
 
 .button.button-bplugins:active,
@@ -50,7 +51,7 @@
 .streamcast-pro-notice-box {
   background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 0;
   border: 1px solid #ffeed6;
   box-shadow: 0 4px 15px rgba(251, 122, 1, 0.05);
   position: relative;
@@ -119,7 +120,7 @@
   background: #fb7a01;
   color: #fff !important;
   padding: 10px 22px;
-  border-radius: 6px;
+  border-radius: 0;
   text-decoration: none !important;
   font-weight: 600;
   font-size: 14px;

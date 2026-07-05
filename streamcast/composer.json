@@ -15,8 +15,7 @@
     },
     "autoload": {
         "classmap": [
-            "inc/",
-            "class-streamcast-block.php"
+            "inc/"
         ]
     }
 }
