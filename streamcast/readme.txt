@@ -4,7 +4,7 @@ Tags: live stream, icecast, shoutcast, radio player, audio player
 Donate link: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.2
 Tested up to: 7.0
-Stable tag: 2.4.3
+Stable tag: 2.4.4
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -320,6 +320,9 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 ---
 
 == Changelog ==
+
+= 2.4.4 - 22 July 2026 =
+* Fix: Resolved early text domain loading notice (`_load_textdomain_just_in_time`) triggered before `init` action in WordPress 6.7+.
 
 = 2.4.3 - 5 July 2026 =
 * **Refactor:** Reorganized plugin architecture by keeping blocks under src/blocks/streamcast/ and admin dashboard under src/admin-dashboard/.

@@ -31,7 +31,9 @@ class STREAMCAST_Main {
 		new \StreamCast\STREAMCAST_Shortcode();
 		new \StreamCast\AJAX();
 
-		do_action('streamcast_csf_init');
+		add_action('init', function () {
+			do_action('streamcast_csf_init');
+		}, 5);
 		add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_admin_assets']);
 		add_action('admin_menu', [__CLASS__, 'add_help_pages']);
 		add_shortcode('stream', [__CLASS__, 'stream_shortcode']); 
