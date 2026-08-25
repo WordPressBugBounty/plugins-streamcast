@@ -1,19 +1,21 @@
-=== StreamCast – Live Radio Streaming Player ===
+=== StreamCast – bring live radio to your site with a sleek player ===
 Contributors: bplugins, taninrahman, shehabulislam, freemius
 Tags: live stream, icecast, shoutcast, radio player, audio player
-Donate link: https://www.buymeacoffee.com/abuhayat
-Requires at least: 6.2
-Tested up to: 7.0
-Stable tag: 2.4.4
+Tested up to: 7.1
+Stable tag: 2.4.5
 Requires PHP: 7.1
+Requires at least: 6.2
+Donate link: https://www.buymeacoffee.com/abuhayat
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-StreamCast allows you to play IceCast, Shoutcast, Radionomy, RadioJar, RadioCo and more beautifully inside WordPress.
+Embed a responsive live radio streaming player in WordPress – IceCast, Shoutcast, RadioCo, RadioJar & more via shortcode or Gutenberg block.
 
 == Description ==
 
-### The #1 No-Code Radio Player Plugin for WordPress – Trusted by Thousands Worldwide
+**Put your live radio stream on any WordPress page in minutes – a beautiful, responsive player your listeners can enjoy on every device, no code required.**
+
+[**StreamCast**](https://bplugins.com/products/streamcast-radio-player/) | [**Documentation**](https://bplugins.com/docs/streamcast-radio-player/) | [**Pricing**](https://bplugins.com/products/streamcast-radio-player/pricing/) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/streamcast-radio-player/#demos)
 
 StreamCast is a simple, accessible, and fully customizable online radio streaming player for WordPress.
 
@@ -23,7 +25,6 @@ It’s lightweight, fast, responsive, and works across all major browsers and de
 
 Whether you run an online radio station, podcast live stream, community FM, or educational broadcast—StreamCast lets you embed your live stream beautifully inside WordPress.
 
-[**StreamCast**](https://bplugins.com/products/streamcast-radio-player/) | [**Documentation**](https://bplugins.com/docs/streamcast-radio-player/) | [**Pricing**](https://bplugins.com/products/streamcast-radio-player/pricing/) | [**Support**](https://bplugins.com/support/) | [**Demo**](https://bplugins.com/products/streamcast-radio-player/#demos)
 
 = How To Use It? Learn Quick = 
 
@@ -320,6 +321,11 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 ---
 
 == Changelog ==
+
+= 2.4.5 - 25 August 2026 =
+* **New:** Added a "Where It Plays" panel to the classic editor side column, showing the native block and every page builder the shortcode works in, with one-click shortcode copy.
+* **New:** Added a Pro panel to the side column listing the settings the free build keeps locked, so it is clear what an upgrade unlocks without hunting through the form.
+* **Update:** Made the radio player edit screen easier to work with — the shortcode and placement options are now beside Save instead of buried in the configuration form.
 
 = 2.4.4 - 22 July 2026 =
 * Fix: Resolved early text domain loading notice (`_load_textdomain_just_in_time`) triggered before `init` action in WordPress 6.7+.

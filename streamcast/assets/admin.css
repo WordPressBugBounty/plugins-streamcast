@@ -1,30 +1,4 @@
-.streamcast_shortcode_box_after_title {
-  display: flex;
-  background: #fff;
-  padding: 5px 15px;
-  align-items: center;
-  gap: 15px;
-  border-radius: 3px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-}
-
-.streamcast_shortcode_box_after_title label {
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.streamcast_shortcode_box_after_title .shortcode_area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.streamcast_shortcode_box_after_title .shortcode_area svg {
-  cursor: pointer;
-}
-
-/* Desing upgrade menu */
+/* Upgrade menu item */
 .fs-submenu-item.streamcast.pricing.upgrade-mode {
   background: #39920D;
   border-radius: 0;
@@ -33,106 +7,690 @@
   padding: 6px 40px 6px 15px;
 }
 
+/* ============================================================
+   The edit screen, as one system: the side column cards (Where
+   It Plays / Pro tuner), the shortcode rail under the title, and
+   the locked-in-free bank inside the settings form.
 
-.button.button-bplugins {
-  background: #fb7a01;
-  color: #fff;
+   Three voices, ranked loudest to quietest: the side column's
+   solid head bar, the rail's single blue button, the bank's pale
+   chip header. Same 3px radius on the same hairline throughout,
+   same monospace label at the same tracking.
+
+   The side column cards draw their own surface, so the postbox
+   chrome is stripped. Hiding .postbox-header also removes the
+   toggle and drag handle, which keeps them open and in place.
+
+   Every surface reads from a custom property, so recoloring the
+   whole family is a matter of editing the token block below and
+   nothing else. Current palette: Blue Bar (#226DF5).
+   ============================================================ */
+
+.streamcast-bay,
+.streamcast-tuner,
+.streamcast-tuner__body,
+.streamcast-rail,
+.streamcast-marquee {
+  --sc-head-bg: #226df5;
+  --sc-head-fg: #ffffff;
+  --sc-head-count: #ffffff;
+  --sc-head-line: #1a56c4;
+  --sc-card-line: #c3c4c7;
+  --sc-native-bg: #ffffff;
+  --sc-native-fg: #1d2327;
+  --sc-native-sub: #226df5;
+  --sc-native-line: #e6e6e8;
+  --sc-jack: #226df5;
+  --sc-jack-glow: rgba(34, 109, 245, 0.3);
+  --sc-jack-sm: #a7b0bd;
+  --sc-chip-bg: #e8f0fe;
+  --sc-chip-fg: #1a4fb0;
+  --sc-chip-line: #cfe0fd;
+  --sc-mq-from: #1b5fdd;
+  --sc-mq-mid: #2a76fa;
+  --sc-mq-to: #3a80f7;
+  --sc-mq-line: rgba(255, 255, 255, 0.22);
+  --sc-mq-fg: #ffffff;
+  --sc-mq-sub: rgba(255, 255, 255, 0.85);
+  --sc-mq-chip-bg: rgba(255, 255, 255, 0.16);
+  --sc-mq-chip-line: rgba(255, 255, 255, 0.24);
+  --sc-rail-bg: #f6f7f7;
+  --sc-rail-fg: #1d2327;
+  --sc-rail-line: #dcdcde;
+  --sc-rail-arrow: #8c8f94;
+  --sc-rail-copied: #007017;
+  --sc-scale-bg: #226df5;
+  --sc-scale-line: #1a56c4;
+  --sc-tick: rgba(255, 255, 255, 0.32);
+  --sc-tick-major: rgba(255, 255, 255, 0.72);
+  --sc-needle: #ffd166;
+  --sc-needle-glow: rgba(255, 209, 102, 0.7);
+  --sc-scale-fg: #ffffff;
+  --sc-scale-on: #ffffff;
+  --sc-cta-bg: #226df5;
+  --sc-cta-bg-hover: #1a56c4;
+  --sc-cta-fg: #ffffff;
+}
+
+#poststuff .streamcast-flat-box {
   border: none;
-  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 16px;
 }
 
-.button.button-bplugins:active,
-.button.button-bplugins:focus {
-  background: #d66801;
-  color: #fff;
+#poststuff .streamcast-flat-box .postbox-header {
+  display: none;
 }
 
-/* Pro Notice Box Styles */
-.streamcast-pro-notice-box {
-  background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
-  padding: 25px;
-  border-radius: 0;
-  border: 1px solid #ffeed6;
-  box-shadow: 0 4px 15px rgba(251, 122, 1, 0.05);
-  position: relative;
+#poststuff .streamcast-flat-box .inside {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Where It Plays ---------- */
+
+.streamcast-bay {
+  border: 1px solid var(--sc-card-line);
+  border-radius: 3px;
   overflow: hidden;
+  background: #ffffff;
 }
 
-.streamcast-pro-notice-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: #fb7a01;
+.streamcast-bay__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  background: var(--sc-head-bg);
+  border-bottom: 1px solid var(--sc-head-line);
 }
 
-.streamcast-pro-notice-title {
-  margin-top: 0 !important;
-  color: #d66801 !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
+.streamcast-bay__lbl {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sc-head-fg);
+}
+
+.streamcast-bay__count {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: var(--sc-head-count);
+}
+
+/* The patch jack: shared by the bay, the shortcode rail, and the builder grid. */
+
+.streamcast-jack {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  flex: none;
+  background: #ffffff;
+  border: 2px solid var(--sc-jack);
+  box-shadow: 0 0 0 3px var(--sc-jack-glow);
+}
+
+.streamcast-jack--sm {
+  width: 9px;
+  height: 9px;
+  border-width: 1.5px;
+  border-color: var(--sc-jack-sm);
+  box-shadow: none;
+}
+
+.streamcast-bay__native {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 12px;
+  padding: 10px 11px;
+  background: var(--sc-native-bg);
+  border-bottom: 1px solid var(--sc-native-line);
 }
 
-.streamcast-pro-notice-desc {
-  font-size: 14px;
-  color: #8c4400;
-  margin-bottom: 20px;
-  font-weight: 400;
-  margin-top: 0px;
+.streamcast-bay__names {
+  display: block;
+  min-width: 0;
 }
 
-.streamcast-pro-notice-list {
-  margin: 15px 0 !important;
-  padding-left: 0 !important;
-  list-style: none !important;
+.streamcast-bay__n1 {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--sc-native-fg);
 }
 
-.streamcast-pro-notice-list li {
+.streamcast-bay__n2 {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-native-sub);
+  margin-top: 1px;
+}
+
+.streamcast-bay__chip {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sc-chip-fg);
+  background: var(--sc-chip-bg);
+  padding: 3px 6px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.streamcast-bay__rail {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  margin: 0;
+  padding: 7px 11px;
+  background: var(--sc-rail-bg);
+  border: none;
+  border-bottom: 1px solid var(--sc-rail-line);
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease-in-out;
+}
+
+.streamcast-bay__rail:hover,
+.streamcast-bay__rail:focus {
+  background: #eef1f3;
+  outline: none;
+}
+
+.streamcast-bay__rail:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--sc-jack);
+}
+
+.streamcast-bay__code {
+  flex: 1;
+  min-width: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  color: var(--sc-rail-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.streamcast-bay__rail.copied .streamcast-bay__code {
+  color: var(--sc-rail-copied);
+  font-weight: 600;
+}
+
+.streamcast-bay__arrow {
+  flex: none;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--sc-rail-arrow);
+}
+
+.streamcast-bay__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #e6e6e8;
+}
+
+.streamcast-bay__grid > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  background: #ffffff;
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: #2c3338;
+}
+
+.streamcast-bay__foot {
+  margin: 0;
+  padding: 9px 11px;
+  background: #f6f7f7;
+  border-top: 1px solid #e6e6e8;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: #646970;
+}
+
+/* ---------- Pro tuner ---------- */
+
+.streamcast-tuner {
+  padding: 12px 12px 9px;
+  background: var(--sc-scale-bg);
+  border: 1px solid var(--sc-card-line);
+  border-bottom: 1px solid var(--sc-scale-line);
+  border-radius: 3px 3px 0 0;
+}
+
+.streamcast-tuner__scale {
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 10px;
-  color: #d66801;
-  font-size: 13.5px;
+  height: 24px;
 }
 
-.streamcast-pro-notice-list li::before {
-  content: "✦";
+.streamcast-tuner__ticks {
+  display: flex;
+  align-items: flex-end;
+  height: 14px;
+}
+
+.streamcast-tuner__ticks i {
+  flex: 1;
+  height: 5px;
+  margin-right: 2px;
+  background: var(--sc-tick);
+}
+
+.streamcast-tuner__ticks i:nth-child(4n + 1) {
+  height: 11px;
+  background: var(--sc-tick-major);
+}
+
+.streamcast-tuner__needle {
   position: absolute;
-  left: 0;
-  color: #fb7a01;
-  font-weight: bold;
+  top: -3px;
+  left: 22%;
+  width: 2px;
+  height: 20px;
+  background: var(--sc-needle);
+  box-shadow: 0 0 8px var(--sc-needle-glow);
+  animation: streamcastSweep 6s ease-in-out infinite alternate;
 }
 
-.streamcast-pro-notice-list li strong {
-  color: #8c4400;
+@keyframes streamcastSweep {
+  0% {
+    left: 20%;
+  }
+  100% {
+    left: 26%;
+  }
 }
 
-.streamcast-pro-notice-button {
+@media (prefers-reduced-motion: reduce) {
+  .streamcast-tuner__needle {
+    animation: none;
+  }
+}
+
+.streamcast-tuner__lbl {
+  display: flex;
+  justify-content: space-between;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--sc-scale-fg);
+  margin-top: 4px;
+}
+
+.streamcast-tuner__lbl .on {
+  color: var(--sc-scale-on);
+  font-weight: 600;
+}
+
+.streamcast-tuner__body {
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--sc-card-line);
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+}
+
+.streamcast-tuner__body h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1d2327;
+}
+
+.streamcast-tuner__locks {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.streamcast-tuner__locks li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 0;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: #50575e;
+}
+
+.streamcast-tuner__locks svg {
+  flex: none;
+  color: #8c8f94;
+}
+
+.streamcast-tuner__cta {
+  display: block;
+  padding: 8px;
+  background: var(--sc-cta-bg);
+  border-radius: 2px;
+  color: var(--sc-cta-fg);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.streamcast-tuner__cta:hover,
+.streamcast-tuner__cta:focus {
+  background: var(--sc-cta-bg-hover);
+  color: var(--sc-cta-fg);
+  box-shadow: none;
+}
+
+.streamcast-tuner__foot {
+  margin: 7px 0 0;
+  font-size: 10.5px;
+  text-align: center;
+  color: #787c82;
+}
+
+/* ---------- Shortcode rail (edit_form_after_title) ---------- */
+
+.streamcast-rail-box {
+  margin-top: 12px;
+}
+
+.streamcast-rail {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border: 1px solid var(--sc-card-line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.streamcast-rail__slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  padding: 0 13px;
+  background: var(--sc-rail-bg);
+  border-right: 1px solid var(--sc-rail-line);
+}
+
+.streamcast-rail__lbl {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #50575e;
+  white-space: nowrap;
+}
+
+/* The margin and ground reset are core's `code` styles, which would
+   otherwise put a grey chip around the shortcode. */
+.streamcast-rail__code {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 10px 14px;
+  background: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: var(--sc-rail-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+.streamcast-rail__copy {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  margin: 0;
+  padding: 0 16px;
+  background: var(--sc-cta-bg);
+  border: none;
+  border-left: 1px solid var(--sc-head-line);
+  border-radius: 0;
+  color: var(--sc-cta-fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+.streamcast-rail__copy:hover,
+.streamcast-rail__copy:focus {
+  background: var(--sc-cta-bg-hover);
+  color: var(--sc-cta-fg);
+}
+
+.streamcast-rail__copy:focus-visible {
+  outline: 2px solid #1d2327;
+  outline-offset: -4px;
+}
+
+.streamcast-rail__copy svg {
+  flex: none;
+}
+
+/* Set by assets/admin.js, which also swaps the .copy-text label. */
+.streamcast-rail__copy.copied {
+  background: var(--sc-rail-copied);
+  border-left-color: #005c13;
+}
+
+.streamcast-rail__hint {
+  margin: 6px 0 0;
+  padding-left: 2px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #646970;
+}
+
+/* ---------- Shut marquee (inside the settings form) ----------
+   Three panels across one blue field: the count as a large amber numeral,
+   the headline plus the setting names as chips, then the call to action.
+
+   The amber is --sc-needle, the same #FFD166 as the side column's tuner
+   needle and the only warm colour in the palette -- which is what lets the
+   numeral carry at a glance without adding a second accent. The vertical
+   pinstripe is the tuner dial's tick rhythm reused as texture.
+
+   Headline and label are divs, not p/h4: #poststuff carries ID-level rules
+   for those elements that would outrank a class selector here. */
+
+.streamcast-marquee {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid var(--sc-head-line);
+  border-radius: 3px;
+  background: linear-gradient(105deg, var(--sc-mq-from) 0%, var(--sc-mq-mid) 58%, var(--sc-mq-to) 100%);
+}
+
+.streamcast-marquee::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px 14px);
+  pointer-events: none;
+}
+
+/* lift the panels above the pinstripe */
+.streamcast-marquee > div {
+  position: relative;
+}
+
+.streamcast-marquee__count {
+  flex: none;
+  width: 148px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--sc-mq-line);
+}
+
+.streamcast-marquee__count b {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--sc-needle);
+  font-variant-numeric: tabular-nums;
+}
+
+.streamcast-marquee__count span {
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sc-mq-sub);
+}
+
+.streamcast-marquee__body {
+  flex: 1;
+  min-width: 260px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  justify-content: center;
+}
+
+.streamcast-marquee__hl {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--sc-mq-fg);
+}
+
+.streamcast-marquee__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.streamcast-marquee__chips span {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: #fb7a01;
-  color: #fff !important;
-  padding: 10px 22px;
-  border-radius: 0;
-  text-decoration: none !important;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(251, 122, 1, 0.2);
-  border: none;
-  cursor: pointer;
+  gap: 5px;
+  padding: 3px 8px;
+  background: var(--sc-mq-chip-bg);
+  border: 1px solid var(--sc-mq-chip-line);
+  border-radius: 2px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--sc-mq-fg);
 }
 
-.streamcast-pro-notice-button:hover {
-  background: #d66801;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(251, 122, 1, 0.3);
-  color: #fff !important;
+.streamcast-marquee__chips svg {
+  flex: none;
+}
+
+.streamcast-marquee__cta {
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-left: 1px solid var(--sc-mq-line);
+}
+
+.streamcast-marquee__cta a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border-radius: 2px;
+  color: var(--sc-chip-fg);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s ease-in-out;
+}
+
+.streamcast-marquee__cta a:hover,
+.streamcast-marquee__cta a:focus {
+  background: #f0f6ff;
+  color: var(--sc-chip-fg);
+  box-shadow: none;
+}
+
+.streamcast-marquee__cta a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.streamcast-marquee__cta a em {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #646970;
+}
+
+/* A narrow main column -- WordPress drops the edit screen to one column at
+   this width -- stacks the three panels and shrinks the numeral. */
+@media screen and (max-width: 850px) {
+  .streamcast-marquee__count {
+    width: 100%;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    padding: 12px 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--sc-mq-line);
+  }
+
+  .streamcast-marquee__count b {
+    font-size: 34px;
+  }
+
+  .streamcast-marquee__count span {
+    margin-top: 0;
+  }
+
+  .streamcast-marquee__cta {
+    width: 100%;
+    padding: 0 16px 16px;
+    border-left: none;
+  }
+
+  .streamcast-marquee__cta a {
+    width: 100%;
+  }
 }

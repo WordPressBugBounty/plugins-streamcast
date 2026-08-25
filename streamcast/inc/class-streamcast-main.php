@@ -16,6 +16,7 @@ class STREAMCAST_Main {
 		// Require remaining procedural files (not classes/namespaces)
 		require_once STREAMCAST_PLUGIN_PATH . 'inc/enable-mime-type.php';
 		require_once STREAMCAST_PLUGIN_PATH . 'inc/class-streamcast-functions.php'; // Registers global helper streamcast_get_meta()
+		require_once STREAMCAST_PLUGIN_PATH . 'inc/class-streamcast-sidebox.php';
 
 		if (!class_exists('STREAMCAST_STREAMCAST_CSF')) {
 			require_once STREAMCAST_PLUGIN_PATH . 'vendor/codestar-framework/codestar-framework.php';
@@ -30,6 +31,9 @@ class STREAMCAST_Main {
 		new \StreamCast\STREAMCAST_Block();
 		new \StreamCast\STREAMCAST_Shortcode();
 		new \StreamCast\AJAX();
+
+		$sidebox = new \StreamCast\STREAMCAST_SideBox();
+		$sidebox->register();
 
 		add_action('init', function () {
 			do_action('streamcast_csf_init');
@@ -54,7 +58,7 @@ class STREAMCAST_Main {
 			wp_enqueue_script('streamcast-admin-post-js', STREAMCAST_PLUGIN_DIR . 'build/admin-post.js', [], STREAMCAST_PLUGIN_VERSION, true);
 			wp_enqueue_style('streamcast-admin-post-css', STREAMCAST_PLUGIN_DIR . 'build/admin-post.css', [], STREAMCAST_PLUGIN_VERSION);
 			wp_enqueue_style('streamcast-admin-css', STREAMCAST_PLUGIN_DIR . 'assets/admin.css', [], STREAMCAST_PLUGIN_VERSION); 
-			wp_enqueue_script('streamcast-admin-js', STREAMCAST_PLUGIN_DIR . 'assets/admin.js', [], STREAMCAST_PLUGIN_VERSION, true);
+			wp_enqueue_script('streamcast-admin-js', STREAMCAST_PLUGIN_DIR . 'assets/admin.js', ['jquery'], STREAMCAST_PLUGIN_VERSION, true);
 		}
 
 		if ('streamcast_page_streamcast' === $hook) {
@@ -84,6 +88,7 @@ class STREAMCAST_Main {
 			'isPremium' => false,
 			'hasPro' => false,
 			'adminUrl' => admin_url(),
+			'pluginUrl' => STREAMCAST_PLUGIN_DIR,
 			'licenseActiveNonce' => wp_create_nonce('bPlLicenseActivation')
 		])); ?>'></div>
 		<?php

@@ -14,6 +14,7 @@ class ComposerStaticInitdb8d8612fbf36607602b8210bd95deba
         'StreamCast\\STREAMCAST_Block' => __DIR__ . '/../..' . '/inc/class-streamcast-block.php',
         'StreamCast\\STREAMCAST_Main' => __DIR__ . '/../..' . '/inc/class-streamcast-main.php',
         'StreamCast\\STREAMCAST_Shortcode' => __DIR__ . '/../..' . '/inc/class-streamcast-shortcode.php',
+        'StreamCast\\STREAMCAST_SideBox' => __DIR__ . '/../..' . '/inc/class-streamcast-sidebox.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

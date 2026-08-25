@@ -103,32 +103,43 @@ if (!class_exists('STREAMCAST_Admin')) {
 			}
 		}
 
+		/**
+		 * The shortcode rail, under the title. One copy target, and the shortcode is
+		 * presented as the value it is rather than as a button -- same object as the
+		 * side column's copy rail, scaled up for the main column.
+		 *
+		 * The streamcast_shortcode_copy_btn class and the .copy-text span are the hooks
+		 * assets/admin.js binds to; it toggles .copied and swaps the label.
+		 */
 		public function shortcode_area() {
 			if ('streamcast' != get_post_type()) {
 				return;
 			}
 			global $post;
-			$id = $post->ID;
 
-			$shortcode = "[radio_player id='" . esc_attr($id) . "']";
+			$shortcode = "[radio_player id='" . $post->ID . "']";
 			?>
-        <div class="streamcast_shortcode_box_after_title">
-            <label><?php esc_html_e('Copy and paste this shortcode into your posts, pages and widget', 'streamcast'); ?></label>
-            <div class="shortcode_area">
-                <button class="button button-bplugins button-large streamcast_shortcode_copy_btn"
-                        data-shortcode="<?php echo esc_attr($shortcode) ?>"><span class="copy-text"><?php echo esc_html($shortcode); ?></span></button>
-                <svg class='streamcast_shortcode_copy_btn' data-type="icon"
-                     data-shortcode='<?php echo esc_attr($shortcode) ?>'
-                     width='22px' height='22px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                            d='M8 4V16C8 17.1046 8.89543 18 10 18L18 18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.0829 2.56999C15.7092 2.2046 15.2074 2 14.6847 2H10C8.89543 2 8 2.89543 8 4Z'
-                            stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>
-                    <path d='M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8'
-                          stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>
-                </svg>
-            </div>
-        </div>
-		<?php
+			<div class="streamcast-rail-box">
+				<div class="streamcast-rail">
+					<span class="streamcast-rail__slot">
+						<span class="streamcast-jack" aria-hidden="true"></span>
+						<span class="streamcast-rail__lbl"><?php esc_html_e('Shortcode', 'streamcast'); ?></span>
+					</span>
+
+					<code class="streamcast-rail__code"><?php echo esc_html($shortcode); ?></code>
+
+					<button type="button"
+							class="streamcast-rail__copy streamcast_shortcode_copy_btn"
+							data-shortcode="<?php echo esc_attr($shortcode); ?>"
+							title="<?php esc_attr_e('Copy shortcode', 'streamcast'); ?>">
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" focusable="false"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>
+						<span class="copy-text"><?php esc_html_e('Copy', 'streamcast'); ?></span>
+					</button>
+				</div>
+
+				<p class="streamcast-rail__hint"><?php esc_html_e('Paste it into any post, page, or widget.', 'streamcast'); ?></p>
+			</div>
+			<?php
 		} 
 
 	}

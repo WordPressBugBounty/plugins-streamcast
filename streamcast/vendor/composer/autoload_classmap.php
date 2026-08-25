@@ -13,4 +13,5 @@ return array(
     'StreamCast\\STREAMCAST_Block' => $baseDir . '/inc/class-streamcast-block.php',
     'StreamCast\\STREAMCAST_Main' => $baseDir . '/inc/class-streamcast-main.php',
     'StreamCast\\STREAMCAST_Shortcode' => $baseDir . '/inc/class-streamcast-shortcode.php',
+    'StreamCast\\STREAMCAST_SideBox' => $baseDir . '/inc/class-streamcast-sidebox.php',
 );

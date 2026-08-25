@@ -8,7 +8,6 @@ if (class_exists('STREAMCAST_STREAMCAST_CSF')) {
 	$streamcast_prefix = 'sc_';
 	$streamcast_post_type = 'streamcast';
 
-	$streamcast_crown_icon = '<span class="streamcast-crown-icon" style="display: inline-flex; width: 18px; height: 18px; vertical-align: middle; margin-right: 5px; align-items: center; justify-content: center;"><img src="' . STREAMCAST_PLUGIN_DIR . 'assets/crown.png" alt="pro-icon" style="width: 18px; height: 16px; display: block;" /></span>';
 
 	// Create a metabox
 	\STREAMCAST_STREAMCAST_CSF::createMetabox($streamcast_prefix, array(
@@ -303,94 +302,118 @@ if (class_exists('STREAMCAST_STREAMCAST_CSF')) {
 			),
 
 
-			// --- PRO Features Announcement Fields ---
-			// Pro Features for Minimal
+			// --- Shut marquees ---
+			// One per player type: how many settings that type cannot reach in this build.
+			// These state a fact and link out; the side column's Pro card carries the
+			// pitch, so nothing here repeats it.
+
+			// Minimal
 			array(
 				'type' => 'content',
-				'content' => '
-                    <div class="streamcast-pro-notice-box">
-                        <h4 class="streamcast-pro-notice-title">🚀 Get More with Premium Version</h4>
-                        <p class="streamcast-pro-notice-desc">The following features are available in the Premium Version:</p>
-                        <ul class="streamcast-pro-notice-list">
-                            <li><strong>Custom CSS:</strong> Add your own styles to match your site perfectly.</li>
-                            <li><strong>Player Position:</strong> Align your player to Left, Center, or Right.</li>
-                        </ul>
-                        <a href="edit.php?post_type=streamcast&page=streamcast#/pricing" class="streamcast-pro-notice-button">' . $streamcast_crown_icon . ' Get Preemium</a>
-                    </div>
-                ',
+				'content' => \StreamCast\Functions::shut_marquee(array(
+					array(
+						'name' => __('Custom CSS', 'streamcast'),
+						'desc' => __('Add your own styles to match your site.', 'streamcast'),
+					),
+					array(
+						'name' => __('Player Position', 'streamcast'),
+						'desc' => __('Align the player left, center, or right.', 'streamcast'),
+					),
+				)),
 				'dependency' => array('opt-radio', '==', 'minimal'),
 			),
-			// Pro Features for Standard
+
+			// Standard
 			array(
 				'type' => 'content',
-				'content' => '
-                    <div class="streamcast-pro-notice-box">
-                        <h4 class="streamcast-pro-notice-title">🚀 Get More with Premium Version</h4>
-                        <p class="streamcast-pro-notice-desc">The following features are available in the Premium Version:</p>
-                        <ul class="streamcast-pro-notice-list">
-                            <li><strong>Auto Play & Volume:</strong> Automatically start playing with preset volume.</li>
-                            <li><strong>Fetch Name From URL:</strong> Get station name automatically from the stream.</li>
-                            <li><strong>Custom CSS & Position:</strong> Full control over styling and placement.</li>
-                        </ul>
-                        <a href="edit.php?post_type=streamcast&page=streamcast#/pricing" class="streamcast-pro-notice-button">' . $streamcast_crown_icon . ' Get Preemium</a>
-                    </div>
-                ',
+				'content' => \StreamCast\Functions::shut_marquee(array(
+					array(
+						'name' => __('Auto play & volume', 'streamcast'),
+						'desc' => __('Start playing automatically at a preset volume.', 'streamcast'),
+					),
+					array(
+						'name' => __('Fetch name from URL', 'streamcast'),
+						'desc' => __('Read the station name from the stream itself.', 'streamcast'),
+					),
+					array(
+						'name' => __('Custom CSS', 'streamcast'),
+						'desc' => __('Add your own styles to match your site.', 'streamcast'),
+					),
+					array(
+						'name' => __('Player Position', 'streamcast'),
+						'desc' => __('Align the player left, center, or right.', 'streamcast'),
+					),
+				)),
 				'dependency' => array('opt-radio', '==', 'standard'),
 			),
-			// Pro Features for Advanced
+
+			// Advanced
 			array(
 				'type' => 'content',
-				'content' => '
-                    <div class="streamcast-pro-notice-box">
-                        <h4 class="streamcast-pro-notice-title">🚀 Get More with Premium Version</h4>
-                        <p class="streamcast-pro-notice-desc">The following features are available in the Premium Version:</p>
-                        <ul class="streamcast-pro-notice-list">
-                            <li><strong>Custom Artwork:</strong> Show beautiful station images (94x94 px).</li>
-                            <li><strong>Show Time & BG Color:</strong> Display duration and customize the layout color.</li>
-                            <li><strong>Full Control:</strong> Autoplay, Volume, and Metadata fetching included.</li>
-                        </ul>
-                        <a href="edit.php?post_type=streamcast&page=streamcast#/pricing" class="streamcast-pro-notice-button">' . $streamcast_crown_icon . ' Get Preemium</a>
-                    </div>
-                ',
+				'content' => \StreamCast\Functions::shut_marquee(array(
+					array(
+						'name' => __('Custom artwork', 'streamcast'),
+						'desc' => __('Show a station image at 94x94 px.', 'streamcast'),
+					),
+					array(
+						'name' => __('Timestamp & background', 'streamcast'),
+						'desc' => __('Display duration and recolor the layout.', 'streamcast'),
+					),
+					array(
+						'name' => __('Auto play & volume', 'streamcast'),
+						'desc' => __('Start playing automatically at a preset volume.', 'streamcast'),
+					),
+					array(
+						'name' => __('Fetch name from URL', 'streamcast'),
+						'desc' => __('Read the station name from the stream itself.', 'streamcast'),
+					),
+				)),
 				'dependency' => array('opt-radio', '==', 'advanced'),
 			),
-			// Pro Features for Ultimate
+
+			// Ultimate
 			array(
 				'type' => 'content',
-				'content' => '
-                    <div class="streamcast-pro-notice-box">
-                        <h4 class="streamcast-pro-notice-title">🚀 Get More with Premium Version</h4>
-                        <p class="streamcast-pro-notice-desc">The following features are available in the Premium Version:</p>
-                        <ul class="streamcast-pro-notice-list">
-                            <li><strong>Visualizer:</strong> Stunning dynamic audio waves while playing.</li>
-                            <li><strong>Advanced Themes:</strong> Choice of Dodger Blue, Bittersweet, and more.</li>
-                            <li><strong>Custom Branding:</strong> Poster images, BG images, and custom color overlays.</li>
-                            <li><strong>Full Metadata:</strong> Fetch station and artist name from URL.</li>
-                        </ul>
-                        <a href="edit.php?post_type=streamcast&page=streamcast#/pricing" class="streamcast-pro-notice-button">' . $streamcast_crown_icon . ' Get Preemium</a>
-                    </div>
-                ',
+				'content' => \StreamCast\Functions::shut_marquee(array(
+					array(
+						'name' => __('Visualizer', 'streamcast'),
+						'desc' => __('Live audio waves while the stream plays.', 'streamcast'),
+					),
+					array(
+						'name' => __('Advanced themes', 'streamcast'),
+						'desc' => __('Dodger Blue, Bittersweet, and more.', 'streamcast'),
+					),
+					array(
+						'name' => __('Custom branding', 'streamcast'),
+						'desc' => __('Poster art, background image, and color overlays.', 'streamcast'),
+					),
+					array(
+						'name' => __('Station metadata', 'streamcast'),
+						'desc' => __('Fetch station and artist name from the URL.', 'streamcast'),
+					),
+				)),
 				'dependency' => array('opt-radio', '==', 'ultimate'),
 			),
-			// Pro Features for Echo, Aurora, Wooden (Combined Message)
+
+			// EchoStream, AuroraPlay, Wooden
 			array(
 				'type' => 'content',
-				'content' => '
-                    <div class="streamcast-pro-notice-box">
-                        <h4 class="streamcast-pro-notice-title">🚀 Get More with Premium Version</h4>
-                        <p class="streamcast-pro-notice-desc">The following features are available in the Premium Version:</p>
-                        <ul class="streamcast-pro-notice-list">
-                            <li><strong>Background & Blur:</strong> Set background images with stylish blur effects.</li>
-                            <li><strong>Detailed Styling:</strong> Customize Station Name, Artist Name, and Hover colors.</li>
-                            <li><strong>Wooden Special:</strong> Full control over Timestamp and Hover backgrounds.</li>
-                        </ul>
-                        <a href="edit.php?post_type=streamcast&page=streamcast#/pricing" class="streamcast-pro-notice-button">' . $streamcast_crown_icon . ' Get Preemium</a>
-                    </div>
-                ',
+				'content' => \StreamCast\Functions::shut_marquee(array(
+					array(
+						'name' => __('Background & blur', 'streamcast'),
+						'desc' => __('Set a background image with a blur treatment.', 'streamcast'),
+					),
+					array(
+						'name' => __('Detailed styling', 'streamcast'),
+						'desc' => __('Recolor station name, artist name, and hover states.', 'streamcast'),
+					),
+					array(
+						'name' => __('Timestamp styling', 'streamcast'),
+						'desc' => __('Wooden only -- timestamp and hover backgrounds.', 'streamcast'),
+					),
+				)),
 				'dependency' => array('opt-radio', 'any', 'echoStream,auroraPlay,wooden'),
 			),
-
-
 
 		)
 	));
