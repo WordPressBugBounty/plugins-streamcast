@@ -28,24 +28,60 @@ class AJAX {
 			wp_send_json_error( 'Invalid URL', 400 );
 		}
 
+		// SSRF Protection: only Shoutcast/Icecast metadata endpoints are proxied
+		if ( ! $this->is_stream_metadata_url( $url ) ) {
+			wp_send_json_error( 'Invalid URL', 400 );
+		}
+
 		// SSRF Protection: Validate the URL to prevent access to internal services
 		$validated_url = wp_http_validate_url( $url );
 		if ( ! $validated_url ) {
 			wp_send_json_error( 'Insecure or invalid URL detected', 400 );
 		}
 
-		// Fetch the data
-		$response = wp_remote_get( $validated_url, array(
-			'timeout' => 5,
+		// Fetch the data (wp_safe_remote_get also re-validates every redirect target)
+		$response = wp_safe_remote_get( $validated_url, array(
+			'timeout'             => 5,
+			'redirection'         => 3,
+			'limit_response_size' => 512 * KB_IN_BYTES,
 		) );
 
 		if ( is_wp_error( $response ) ) {
-			wp_send_json_error( $response->get_error_message(), 500 );
+			wp_send_json_error( 'Unable to fetch stream data', 500 );
 		}
 
 		$body = wp_remote_retrieve_body( $response );
 		
 		// Return the data
 		wp_send_json_success( $body );
+	}
+
+	/**
+	 * Check that the URL points to a Shoutcast (/currentsong) or Icecast (/status-json.xsl) metadata endpoint
+	 */
+	private function is_stream_metadata_url( $url ) {
+		$parts = wp_parse_url( $url );
+		if ( empty( $parts['scheme'] ) || empty( $parts['host'] ) || empty( $parts['path'] ) ) {
+			return false;
+		}
+
+		if ( ! in_array( strtolower( $parts['scheme'] ), array( 'http', 'https' ), true ) ) {
+			return false;
+		}
+
+		$path  = $parts['path'];
+		$query = isset( $parts['query'] ) ? $parts['query'] : '';
+
+		// Shoutcast: <stream>/currentsong?sid=1
+		if ( preg_match( '#/currentsong$#i', $path ) ) {
+			return '' === $query || (bool) preg_match( '/^sid=\d+$/', $query );
+		}
+
+		// Icecast: <stream>/status-json.xsl
+		if ( preg_match( '#/status-json\.xsl$#i', $path ) ) {
+			return '' === $query;
+		}
+
+		return false;
 	}
 }

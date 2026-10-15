@@ -1,8 +1,8 @@
 === StreamCast – bring live radio to your site with a sleek player ===
-Contributors: bplugins, taninrahman, shehabulislam, freemius
+Contributors: bplugins, shamim10, freemius
 Tags: live stream, icecast, shoutcast, radio player, audio player
 Tested up to: 7.1
-Stable tag: 2.4.5
+Stable tag: 2.4.6
 Requires PHP: 7.1
 Requires at least: 6.2
 Donate link: https://www.buymeacoffee.com/abuhayat
@@ -321,6 +321,9 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 ---
 
 == Changelog ==
+
+= 2.4.6 - 15 October 2026 =
+* **Fix:** Fixed a Server-Side Request Forgery (SSRF) vulnerability in the stream metadata AJAX endpoint.
 
 = 2.4.5 - 25 August 2026 =
 * **New:** Added a "Where It Plays" panel to the classic editor side column, showing the native block and every page builder the shortcode works in, with one-click shortcode copy.

@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: StreamCast – Live Radio Streaming Player 2.4.5\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamcast-free\n"
+"Project-Id-Version: StreamCast – Live Radio Streaming Player 2.4.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/streamcast\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-25T11:41:22+00:00\n"
+"POT-Creation-Date: 2026-10-15T08:26:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: streamcast\n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "14-day refund"
 msgstr ""
 
-#: inc/class-streamcast-main.php:140
+#: inc/class-streamcast-main.php:142
 msgid "Help & Demo's"
 msgstr ""
 
@@ -533,31 +533,31 @@ msgstr ""
 msgid "Copy To Clipboard"
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:185
+#: src/admin-dashboard/utils/data.js:192
 msgid "Customize You Player with some awesome options"
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:186
+#: src/admin-dashboard/utils/data.js:193
 msgid "Enhance your player using 85+ radio player skins."
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:187
+#: src/admin-dashboard/utils/data.js:194
 msgid "Works great with Shoutcast, Icecast, and other compatible streaming servers."
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:188
+#: src/admin-dashboard/utils/data.js:195
 msgid "This plugin creates ShortCode for Each radio. So that you can play radio anywhere without coding."
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:189
+#: src/admin-dashboard/utils/data.js:196
 msgid "Collect Stream Name or Title or Artist Name from you streaming name."
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:190
+#: src/admin-dashboard/utils/data.js:197
 msgid "Alignment your player like left, center, right."
 msgstr ""
 
-#: src/admin-dashboard/utils/data.js:191
+#: src/admin-dashboard/utils/data.js:198
 msgid "Set image for player background, player poster or art image."
 msgstr ""
 

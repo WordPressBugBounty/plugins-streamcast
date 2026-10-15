@@ -56,6 +56,7 @@ class STREAMCAST_Main {
 		global $typenow;
 		if ('streamcast' === $typenow) {
 			wp_enqueue_script('streamcast-admin-post-js', STREAMCAST_PLUGIN_DIR . 'build/admin-post.js', [], STREAMCAST_PLUGIN_VERSION, true);
+			wp_set_script_translations('streamcast-admin-post-js', 'streamcast');
 			wp_enqueue_style('streamcast-admin-post-css', STREAMCAST_PLUGIN_DIR . 'build/admin-post.css', [], STREAMCAST_PLUGIN_VERSION);
 			wp_enqueue_style('streamcast-admin-css', STREAMCAST_PLUGIN_DIR . 'assets/admin.css', [], STREAMCAST_PLUGIN_VERSION); 
 			wp_enqueue_script('streamcast-admin-js', STREAMCAST_PLUGIN_DIR . 'assets/admin.js', ['jquery'], STREAMCAST_PLUGIN_VERSION, true);
@@ -66,6 +67,7 @@ class STREAMCAST_Main {
 
 			$asset_file = include STREAMCAST_PLUGIN_PATH . 'build/admin-dashboard.asset.php';
 			wp_enqueue_script('apb-admin-dashboard', STREAMCAST_PLUGIN_DIR . 'build/admin-dashboard.js', array_merge($asset_file['dependencies'], ['wp-util']), STREAMCAST_PLUGIN_VERSION, true);
+			wp_set_script_translations('apb-admin-dashboard', 'streamcast');
 		}
 	}
 
